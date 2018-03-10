@@ -54,10 +54,15 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             }
         }
         
-        /* 問題：一定要退掉相機才能到另一個頁面嗎？ */
-        dismiss(animated: true, completion: {
-            self.performSegue(withIdentifier: "SegueForNext", sender: nil)
-        })
+//        /* 問題：一定要退掉相機才能到另一個頁面嗎？ */
+//        dismiss(animated: true, completion: {
+//            self.performSegue(withIdentifier: "SegueForNext", sender: nil)
+//        })
+        
+        /* 原來是這樣啊 */
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "NextViewController")
+        picker.pushViewController(controller, animated: true)
     }
 }
 

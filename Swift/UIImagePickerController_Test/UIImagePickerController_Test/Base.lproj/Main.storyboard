@@ -41,11 +41,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-165" y="25"/>
         </scene>
         <!--Next View Controller-->
         <scene sceneID="5yv-RD-nAN">
             <objects>
-                <viewController id="ZOc-3e-sEK" customClass="NextViewController" customModule="UIImagePickerController_Test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NextViewController" id="ZOc-3e-sEK" customClass="NextViewController" customModule="UIImagePickerController_Test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uqi-IZ-0Wq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQa-V8-e6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="872" y="26"/>
+            <point key="canvasLocation" x="726" y="24"/>
         </scene>
     </scenes>
     <resources>
