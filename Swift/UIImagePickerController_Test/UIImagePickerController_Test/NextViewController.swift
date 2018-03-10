@@ -19,6 +19,7 @@ class NextViewController: UIViewController {
     }
     
     @IBAction func 這樣不行(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        // dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
 }
