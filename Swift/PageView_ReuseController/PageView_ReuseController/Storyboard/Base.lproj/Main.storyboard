@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="PageView_ReuseController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uyq-c4-iah">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <connections>
+                                    <segue destination="Jbk-wC-mRE" kind="embed" id="5gp-KZ-ZnA"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uyq-c4-iah" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="U8S-CO-wri"/>
+                            <constraint firstItem="uyq-c4-iah" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dA7-7M-IvJ"/>
+                            <constraint firstItem="uyq-c4-iah" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jM0-E4-nxf"/>
+                            <constraint firstAttribute="bottom" secondItem="uyq-c4-iah" secondAttribute="bottom" id="pd4-o9-p65"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-743.20000000000005" y="136.69950738916256"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="VnM-NN-OwD">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="none" id="Jbk-wC-mRE" customClass="PageViewController" customModule="PageView_ReuseController" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="pCQ-2V-54m" kind="show" id="w8h-1g-AFC"/>
+                        <segue destination="j3A-h5-uGV" kind="show" id="mpf-9q-Xbc"/>
+                    </connections>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tkW-NY-K7l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="837" y="138"/>
+        </scene>
+        <!--Odd View Controller-->
+        <scene sceneID="rc0-wY-fZa">
+            <objects>
+                <viewController storyboardIdentifier="OddViewController" id="j3A-h5-uGV" customClass="OddViewController" customModule="PageView_ReuseController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zMX-1W-Ksi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQv-ez-Laf">
+                                <rect key="frame" x="106" y="367.66666666666669" width="163" height="77"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92705825389999996" green="0.24396982419999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gQv-ez-Laf" firstAttribute="centerY" secondItem="zMX-1W-Ksi" secondAttribute="centerY" id="glw-0K-Zb3"/>
+                            <constraint firstItem="gQv-ez-Laf" firstAttribute="centerX" secondItem="zMX-1W-Ksi" secondAttribute="centerX" id="hMM-WE-78I"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SCh-Xz-AoQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="myLabel" destination="gQv-ez-Laf" id="GVm-Eg-vpI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VbC-zg-Dn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="396" y="963"/>
+        </scene>
+        <!--Even View Controller-->
+        <scene sceneID="Del-nq-ttp">
+            <objects>
+                <viewController storyboardIdentifier="EvenViewController" id="pCQ-2V-54m" customClass="EvenViewController" customModule="PageView_ReuseController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Axa-xe-qUn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2QS-Rn-Vot">
+                                <rect key="frame" x="101.66666666666669" y="367.66666666666669" width="172" height="77"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2QS-Rn-Vot" firstAttribute="centerY" secondItem="Axa-xe-qUn" secondAttribute="centerY" id="Z9E-4r-UUE"/>
+                            <constraint firstItem="2QS-Rn-Vot" firstAttribute="centerX" secondItem="Axa-xe-qUn" secondAttribute="centerX" id="bkG-ZQ-a4T"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QIb-lP-Kwq"/>
+                    </view>
+                    <connections>
+                        <outlet property="myLabel" destination="2QS-Rn-Vot" id="HpA-Xd-wah"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9rj-ym-znf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1266" y="963"/>
+        </scene>
+    </scenes>
+</document>
