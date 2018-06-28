@@ -4,4 +4,4 @@
 ![UIImagePickerController_Test - 有關相機換頁的問題](./_GIF_/UIImagePickerController_Test.gif)
 
 ## PageView\_ReuseController - 有關PageView換頁的問題
-![PageView\_ReuseController - 有關PageView換頁的問題](./_Gif_/PageView_ReuseController.gif)
+![PageView\_ReuseController - 有關PageView換頁的問題](./_GIF_/PageView_ReuseController.gif)
