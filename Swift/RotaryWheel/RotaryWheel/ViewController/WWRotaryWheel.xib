@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WWRotaryWheel" customModule="RotaryWheel" customModuleProvider="target">
+            <connections>
+                <outlet property="baseView" destination="Axs-T7-Ndp" id="aSQ-nJ-NU9"/>
+                <outlet property="contentView" destination="i5M-Pr-FkT" id="QOo-Sc-Kg9"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Axs-T7-Ndp">
+                    <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
+                    <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Axs-T7-Ndp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6d8-N2-cn6"/>
+                <constraint firstItem="Axs-T7-Ndp" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="a3r-p0-2XR"/>
+                <constraint firstItem="Axs-T7-Ndp" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="m0z-XV-70T"/>
+                <constraint firstItem="Axs-T7-Ndp" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="nte-ts-fyJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="5.5" y="-232.5"/>
+        </view>
+    </objects>
+</document>
