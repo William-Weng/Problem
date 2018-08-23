@@ -8,3 +8,6 @@
 
 ## RotaryWheel - 有關UIControl與UIPanGestureRecognizer的問題
 ![RotaryWheel - 有關UIControl與UIPanGestureRecognizer的問題](./_GIF_/RotaryWheel.gif)
+
+## OpenCV_HelloWorld - 有關OpenCV找人臉的問題
+![OpenCV_HelloWorld - 有關OpenCV找人臉的問題](./_GIF_/OpenCV_HelloWorld.png)
