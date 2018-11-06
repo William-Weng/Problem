@@ -11,3 +11,6 @@
 
 ## OpenCV_HelloWorld - 有關OpenCV找人臉的問題
 ![OpenCV_HelloWorld - 有關OpenCV找人臉的問題](./_GIF_/OpenCV_HelloWorld.png)
+
+## ContainerView_Demo - 利用ContainerView做側邊選單的問題
+![ContainerView_Demo - 利用ContainerView做側邊選單的問題](./_GIF_/ContainerView_Demo.gif)
