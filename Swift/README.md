@@ -14,3 +14,7 @@
 
 ## ContainerView_Demo - 利用ContainerView做側邊選單的問題
 ![ContainerView_Demo - 利用ContainerView做側邊選單的問題](./_GIF_/ContainerView_Demo.gif)
+
+## Gesture_3By3Grid - UIBezierPath碰觸的問題
+![Gesture_3By3Grid - UIBezierPath碰觸的問題](./_GIF_/Gesture_3By3Grid.gif)
+
