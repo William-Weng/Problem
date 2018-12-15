@@ -18,3 +18,5 @@
 ## Gesture_3By3Grid - UIBezierPath碰觸的問題
 ![Gesture_3By3Grid - UIBezierPath碰觸的問題](./_GIF_/Gesture_3By3Grid.gif)
 
+## UIImageCrop - 切圖的問題
+![UIImageCrop - 切圖的問題](./_GIF_/UIImageCrop.png)
