@@ -20,3 +20,6 @@
 
 ## UIImageCrop - 切圖的問題
 ![UIImageCrop - 切圖的問題](./_GIF_/UIImageCrop.png)
+
+## TableViewStretchHeaderImage - NavigitionBar透明度的問題
+![TableViewStretchHeaderImage - NavigitionBar透明度的問題](./_GIF_/TableViewStretchHeaderImage.png)
