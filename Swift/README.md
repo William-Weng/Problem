@@ -23,3 +23,6 @@
 
 ## TableViewStretchHeaderImage - NavigitionBar透明度的問題
 ![TableViewStretchHeaderImage - NavigitionBar透明度的問題](./_GIF_/TableViewStretchHeaderImage.gif)
+
+## TextAttachment - UILabel / UITextField / UITextView的圖片文字問題
+![TextAttachment - UILabel / UITextField / UITextView的圖片文字問題](./_GIF_/TextAttachment.png)
