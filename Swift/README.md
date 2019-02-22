@@ -26,3 +26,6 @@
 
 ## TextAttachment - UILabel / UITextField / UITextView的圖片文字問題
 ![TextAttachment - UILabel / UITextField / UITextView的圖片文字問題](./_GIF_/TextAttachment.png)
+
+## ImageCombine - 圖片放大、旋轉後，移動不準的問題
+![ImageCombine - 圖片放大、旋轉後，移動不準的問題](./_GIF_/ImageCombine.gif)
