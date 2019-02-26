@@ -34,7 +34,7 @@ extension ViewController: UIGestureRecognizerDelegate {
     /// 移動View (歸零)
     @objc private func handleDrag(_ pan: UIPanGestureRecognizer) {
         
-        guard let panLocation = Optional.some(pan.translation(in: pan.view)),
+        guard let panLocation = Optional.some(pan.translation(in: self.view)),
               let view = pan.view
         else {
             return
