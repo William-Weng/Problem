@@ -29,3 +29,6 @@
 
 ## ImageCombine - 圖片放大、旋轉後，移動不準的問題
 ![ImageCombine - 圖片放大、旋轉後，移動不準的問題](./_GIF_/ImageCombine.gif)
+
+## TableViewTouchButton - 按到TableView背後按鈕的問題
+![TableViewTouchButton - 按到TableView背後按鈕的問題](./_GIF_/TableViewTouchButton.gif)
