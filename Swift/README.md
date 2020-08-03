@@ -32,3 +32,6 @@
 
 ## TableViewTouchButton - 按到TableView背後按鈕的問題
 ![TableViewTouchButton - 按到TableView背後按鈕的問題](./_GIF_/TableViewTouchButton.gif)
+
+## CoreLocationDemo - CoreLocation在設定頁顯示的問題
+![CoreLocationDemo - CoreLocation在設定頁顯示的問題](./_GIF_/CoreLocationDemo.png)
