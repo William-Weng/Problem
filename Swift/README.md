@@ -35,3 +35,6 @@
 
 ## CoreLocationDemo - CoreLocation在設定頁顯示的問題
 ![CoreLocationDemo - CoreLocation在設定頁顯示的問題](./_GIF_/CoreLocationDemo.png)
+
+## UICollectionView_HelloWorld - Layout會自動上移 + 點擊沒反應的問題
+![UICollectionView_HelloWorld - Layout會自動上移 + 點擊沒反應的問題](./_GIF_/UICollectionView_HelloWorld.gif)
