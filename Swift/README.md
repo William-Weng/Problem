@@ -38,3 +38,6 @@
 
 ## UICollectionView_HelloWorld - Layout會自動上移 + 點擊沒反應的問題
 ![UICollectionView_HelloWorld - Layout會自動上移 + 點擊沒反應的問題](./_GIF_/UICollectionView_HelloWorld.gif)
+
+## SKStoreProductVC - SKStoreProductViewController - 無法改變背景色的問題
+![SKStoreProductVC - SKStoreProductViewController - 無法改變背景色的問題](./_GIF_/SKStoreProductVC.png)
