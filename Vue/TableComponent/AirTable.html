@@ -63,7 +63,6 @@
         </select>
         <table>
                 <thead v-if="optionValue === 'Linux' || optionValue === 'SQL'"><tr><th>名稱</th><th>說明</th><th>範例</th><th>更新日期</th><tr></thead>
-                <thead v-else-if="optionValue === 'AA'"><tr><th>名稱</th><th>說明</th><th>更新日期</th><tr></thead>
                 <thead v-else-if="optionValue === 'Software'"><tr><th>名稱</th><th>說明</th><th>平臺</th><th>更新日期</th><tr></thead>
                 <thead v-else-if="optionValue === 'Bookmark'"><tr><th>名稱</th><th>說明</th><th>語言</th><th>類型</th><th>更新日期</th><tr></thead>
                 <thead v-else-if="optionValue === 'WebTools' || optionValue === 'Android' || optionValue === 'JavaScript' || optionValue === 'iOS' || optionValue === 'Grails'"><tr><th>名稱</th><th>說明</th><th>類型</th><th>更新日期</th><tr></thead>
@@ -77,73 +76,25 @@
 
                     <td v-if="optionValue === 'WebTools' || optionValue === 'Android' || optionValue === 'JavaScript' || optionValue === 'iOS' || optionValue === 'Grails'">
                         <span v-for="type in record.fields.Type">
-                            <img v-if="type === 'API'" :src="imageMap.get('API')" :alt="type" :width="imageWidth">
-                            <img v-if="type === 'Pricing'" :src="imageMap.get('Pricing')" :alt="type" :width="imageWidth">
-                            <img v-if="type === 'IDE'" :src="imageMap.get('IDE')" :alt="type" :width="imageWidth">
-                            <img v-if="type === 'Gallery'" :src="imageMap.get('Gallery')" :alt="type" :width="imageWidth">
-                            <img v-if="type === 'Java'" :src="imageMap.get('Java')" :alt="type" :width="imageWidth">
-                            <img v-if="type === 'Kotlin'" :src="imageMap.get('Kotlin')" :alt="type" :width="imageWidth">
-                            <img v-if="type === 'Nodejs'" :src="imageMap.get('Nodejs')" :alt="type" :width="imageWidth">
-                            <img v-if="type === 'ES6'" :src="imageMap.get('ES6')" :alt="type" :width="imageWidth">
-                            <img v-if="type === 'TypeScript'" :src="imageMap.get('TypeScript')" :alt="type" :width="imageWidth">
-                            <img v-if="type === 'Angular'" :src="imageMap.get('Angular')" :alt="type" :width="imageWidth">
-                            <img v-if="type === 'jQuery'" :src="imageMap.get('jQuery')" :alt="type" :width="imageWidth">
-                            <img v-if="type === 'React'" :src="imageMap.get('React')" :alt="type" :width="imageWidth">
-                            <img v-if="type === 'Swift'" :src="imageMap.get('Swift')" :alt="type" :width="imageWidth">
-                            <img v-if="type === 'Objective-C'" :src="imageMap.get('Objective-C')" :alt="type" :width="imageWidth">
-                            <img v-if="type === 'Runtime'" :src="imageMap.get('Runtime')" :alt="type" :width="imageWidth">
-                            <img v-if="type === 'Compile'" :src="imageMap.get('Compile')" :alt="type" :width="imageWidth">
+                            <img :src="imageMap.get(type)" :alt="type" :width="imageWidth">
                         </span>
                     </td>
 
                     <td v-if="optionValue === 'Bookmark'">
                         <span v-for="lang in record.fields.Language">
-                            <img v-if="lang === 'zh-TW'" :src="imageMap.get('zh-TW')" :alt="type" :width="imageWidth">
-                            <img v-if="lang === 'zh-CN'" :src="imageMap.get('zh-CN')" :alt="type" :width="imageWidth">
-                            <img v-if="lang === 'en-US'" :src="imageMap.get('en-US')" :alt="type" :width="imageWidth">
+                            <img :src="imageMap.get(lang)" :alt="type" :width="imageWidth">
                         </span>
                     </td>
 
                     <td v-if="optionValue === 'Bookmark'">
                         <span v-for="category in record.fields.Category">
-                            <img v-if="category === 'Swift'" :src="imageMap.get('Swift')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'iOS'" :src="imageMap.get('iOS')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'Linux'" :src="imageMap.get('Linux')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'Web'" :src="imageMap.get('Web')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'Unity'" :src="imageMap.get('Unity')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'Game'" :src="imageMap.get('Game')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'Blog'" :src="imageMap.get('Blog')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'UI'" :src="imageMap.get('UI')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'macOS'" :src="imageMap.get('macOS')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'Vue'" :src="imageMap.get('Vue')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'JavaScript'" :src="imageMap.get('JavaScript')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'HTML'" :src="imageMap.get('HTML')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'CSS'" :src="imageMap.get('CSS')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'Go'" :src="imageMap.get('Go')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'Rust'" :src="imageMap.get('Rust')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'Database'" :src="imageMap.get('Database')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'APP'" :src="imageMap.get('APP')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'Kotlin'" :src="imageMap.get('Kotlin')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'Android'" :src="imageMap.get('Android')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'SQL'" :src="imageMap.get('SQL')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'ProgrammingLanguage'" :src="imageMap.get('ProgrammingLanguage')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'Python'" :src="imageMap.get('Python')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'Music'" :src="imageMap.get('Music')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'Software'" :src="imageMap.get('Software')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'IoT'" :src="imageMap.get('IoT')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'Objective-C'" :src="imageMap.get('Objective-C')" :alt="type" :width="imageWidth">
-                            <img v-if="category === '.NET'" :src="imageMap.get('.NET')" :alt="type" :width="imageWidth">
-                            <img v-if="category === 'Science'" :src="imageMap.get('Science')" :alt="type" :width="imageWidth">
+                            <img :src="imageMap.get(category)" :alt="type" :width="imageWidth">
                         </span>
                     </td>
 
                     <td v-if="optionValue === 'Software'">
                         <span v-for="os in record.fields.OS">
-                            <img v-if="os === 'macOS'" :src="imageMap.get('macOS')" :alt="os" :width="imageWidth">
-                            <img v-if="os === 'Android'" :src="imageMap.get('Android')" :alt="os" :width="imageWidth">
-                            <img v-if="os === 'Windows'" :src="imageMap.get('Windows')" :alt="os" :width="imageWidth">
-                            <img v-if="os === 'iOS'" :src="imageMap.get('iOS')" :alt="os" :width="imageWidth">
-                            <img v-if="os === 'Linux'" :src="imageMap.get('Linux')" :alt="os" :width="imageWidth">
+                            <img :src="imageMap.get(os)" :alt="os" :width="imageWidth">
                         </span>
                     </td>
 
@@ -174,8 +125,8 @@ const myApp = Vue.createApp({
         updateInfo() {
 
             const Key = {
-                app: '<App Key>',
-                authorization: '<App Authorization>',
+                app: '<Your App Key>',
+                authorization: '<Your Authorization Key>',
                 database: this.optionValue
             }
 
@@ -195,10 +146,8 @@ const myApp = Vue.createApp({
                 setTimeout(() => { this.updateInfo() }, 100)
             })
             .catch(error => {
-                console.log(error)
             })
             .finally(() => {
-                // setTimeout(() => { $.unblockUI() }, 500)
             })
         },
         /// 選單選完就更新資料
