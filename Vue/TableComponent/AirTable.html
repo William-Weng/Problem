@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@next/dist/vue.global.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="http://malsup.github.io/jquery.blockUI.js"></script>
+    <style type>
+    table {
+        border: 0;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th {
+        border: solid 2px #000;
+        padding: 16px 8px;
+    }
+
+    td {
+        border: solid 2px #000;
+        text-align: center;
+        padding: 8px;
+        color: #757575;
+    }
+
+    caption {
+        font-size: 24px;
+        text-align: center;
+        background-color: #b8d5e2;
+    }
+
+    select{
+        padding-right: 30px;
+        cursor: pointer;
+        -webkit-appearance: none;
+        background-color: #fff;
+        background-image: none;
+        border-radius: 4px;
+        border: 1px solid #dcdfe6;
+        box-sizing: border-box;
+        color: #606266;
+        display: inline-block;
+        font-size: inherit;
+        height: 40px;
+        line-height: 40px;
+        outline: none;
+        padding: 0 15px;
+        transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+        width: 100%;
+        font-family: inherit;
+    }
+    </style>
+    <title>AirTable Reader</title>
+</head>
+<body>
+    <div id='main'>
+        <select v-model="optionValue" @change="onChange()">
+            <option v-for="item in options" key="item.key" :label="item.value" :value="item.key">{{ item.value }}</option>
+        </select>
+        <table>
+                <thead v-if="optionValue === 'Linux' || optionValue === 'SQL'"><tr><th>名稱</th><th>說明</th><th>範例</th><th>更新日期</th><tr></thead>
+                <thead v-else-if="optionValue === 'AA'"><tr><th>名稱</th><th>說明</th><th>更新日期</th><tr></thead>
+                <thead v-else-if="optionValue === 'Software'"><tr><th>名稱</th><th>說明</th><th>平臺</th><th>更新日期</th><tr></thead>
+                <thead v-else-if="optionValue === 'Bookmark'"><tr><th>名稱</th><th>說明</th><th>語言</th><th>類型</th><th>更新日期</th><tr></thead>
+                <thead v-else-if="optionValue === 'WebTools' || optionValue === 'Android' || optionValue === 'JavaScript' || optionValue === 'iOS' || optionValue === 'Grails'"><tr><th>名稱</th><th>說明</th><th>類型</th><th>更新日期</th><tr></thead>
+                <thead v-else><tr><th>名稱</th><th>說明</th><th>更新日期</th><tr></thead>
+                <tbody>
+                <tr v-for="record in records">
+                    <td><a :href="record.fields.URL" />{{ record.fields.Name }}</td>
+                    <td>{{ record.fields.Notes }}</td>
+
+                    <td v-if="optionValue === 'Linux' || optionValue === 'SQL'">{{ record.fields.Example }}</td>
+
+                    <td v-if="optionValue === 'WebTools' || optionValue === 'Android' || optionValue === 'JavaScript' || optionValue === 'iOS' || optionValue === 'Grails'">
+                        <span v-for="type in record.fields.Type">
+                            <img v-if="type === 'API'" :src="imageMap.get('API')" :alt="type" :width="imageWidth">
+                            <img v-if="type === 'Pricing'" :src="imageMap.get('Pricing')" :alt="type" :width="imageWidth">
+                            <img v-if="type === 'IDE'" :src="imageMap.get('IDE')" :alt="type" :width="imageWidth">
+                            <img v-if="type === 'Gallery'" :src="imageMap.get('Gallery')" :alt="type" :width="imageWidth">
+                            <img v-if="type === 'Java'" :src="imageMap.get('Java')" :alt="type" :width="imageWidth">
+                            <img v-if="type === 'Kotlin'" :src="imageMap.get('Kotlin')" :alt="type" :width="imageWidth">
+                            <img v-if="type === 'Nodejs'" :src="imageMap.get('Nodejs')" :alt="type" :width="imageWidth">
+                            <img v-if="type === 'ES6'" :src="imageMap.get('ES6')" :alt="type" :width="imageWidth">
+                            <img v-if="type === 'TypeScript'" :src="imageMap.get('TypeScript')" :alt="type" :width="imageWidth">
+                            <img v-if="type === 'Angular'" :src="imageMap.get('Angular')" :alt="type" :width="imageWidth">
+                            <img v-if="type === 'jQuery'" :src="imageMap.get('jQuery')" :alt="type" :width="imageWidth">
+                            <img v-if="type === 'React'" :src="imageMap.get('React')" :alt="type" :width="imageWidth">
+                            <img v-if="type === 'Swift'" :src="imageMap.get('Swift')" :alt="type" :width="imageWidth">
+                            <img v-if="type === 'Objective-C'" :src="imageMap.get('Objective-C')" :alt="type" :width="imageWidth">
+                            <img v-if="type === 'Runtime'" :src="imageMap.get('Runtime')" :alt="type" :width="imageWidth">
+                            <img v-if="type === 'Compile'" :src="imageMap.get('Compile')" :alt="type" :width="imageWidth">
+                        </span>
+                    </td>
+
+                    <td v-if="optionValue === 'Bookmark'">
+                        <span v-for="lang in record.fields.Language">
+                            <img v-if="lang === 'zh-TW'" :src="imageMap.get('zh-TW')" :alt="type" :width="imageWidth">
+                            <img v-if="lang === 'zh-CN'" :src="imageMap.get('zh-CN')" :alt="type" :width="imageWidth">
+                            <img v-if="lang === 'en-US'" :src="imageMap.get('en-US')" :alt="type" :width="imageWidth">
+                        </span>
+                    </td>
+
+                    <td v-if="optionValue === 'Bookmark'">
+                        <span v-for="category in record.fields.Category">
+                            <img v-if="category === 'Swift'" :src="imageMap.get('Swift')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'iOS'" :src="imageMap.get('iOS')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'Linux'" :src="imageMap.get('Linux')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'Web'" :src="imageMap.get('Web')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'Unity'" :src="imageMap.get('Unity')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'Game'" :src="imageMap.get('Game')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'Blog'" :src="imageMap.get('Blog')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'UI'" :src="imageMap.get('UI')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'macOS'" :src="imageMap.get('macOS')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'Vue'" :src="imageMap.get('Vue')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'JavaScript'" :src="imageMap.get('JavaScript')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'HTML'" :src="imageMap.get('HTML')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'CSS'" :src="imageMap.get('CSS')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'Go'" :src="imageMap.get('Go')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'Rust'" :src="imageMap.get('Rust')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'Database'" :src="imageMap.get('Database')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'APP'" :src="imageMap.get('APP')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'Kotlin'" :src="imageMap.get('Kotlin')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'Android'" :src="imageMap.get('Android')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'SQL'" :src="imageMap.get('SQL')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'ProgrammingLanguage'" :src="imageMap.get('ProgrammingLanguage')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'Python'" :src="imageMap.get('Python')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'Music'" :src="imageMap.get('Music')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'Software'" :src="imageMap.get('Software')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'IoT'" :src="imageMap.get('IoT')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'Objective-C'" :src="imageMap.get('Objective-C')" :alt="type" :width="imageWidth">
+                            <img v-if="category === '.NET'" :src="imageMap.get('.NET')" :alt="type" :width="imageWidth">
+                            <img v-if="category === 'Science'" :src="imageMap.get('Science')" :alt="type" :width="imageWidth">
+                        </span>
+                    </td>
+
+                    <td v-if="optionValue === 'Software'">
+                        <span v-for="os in record.fields.OS">
+                            <img v-if="os === 'macOS'" :src="imageMap.get('macOS')" :alt="os" :width="imageWidth">
+                            <img v-if="os === 'Android'" :src="imageMap.get('Android')" :alt="os" :width="imageWidth">
+                            <img v-if="os === 'Windows'" :src="imageMap.get('Windows')" :alt="os" :width="imageWidth">
+                            <img v-if="os === 'iOS'" :src="imageMap.get('iOS')" :alt="os" :width="imageWidth">
+                            <img v-if="os === 'Linux'" :src="imageMap.get('Linux')" :alt="os" :width="imageWidth">
+                        </span>
+                    </td>
+
+                    <td width='256em'>{{ new Date(Date.parse(record.createdTime)).toLocaleString() }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+<script>
+const { onMounted } = Vue
+
+const myApp = Vue.createApp({
+    data() {
+        return {
+            records: [],
+            options: [],
+            offset: null,
+            optionValue: null,
+            imageWidth: 36,
+            imageMap: new Map(),
+        }
+    },
+    methods: {
+        /// 到AirTable取資料 => 資料結構：{ Name, Notes, URL, OS }
+        updateInfo() {
+
+            const Key = {
+                app: '<App Key>',
+                authorization: '<App Authorization>',
+                database: this.optionValue
+            }
+
+            const baseRequest = axios.create({
+                baseURL: `https://api.airtable.com/v0/${Key.app}/`,
+                headers: { Authorization: `${Key.authorization}` },
+                params: { offset: this.offset }
+            })
+
+            baseRequest.get(`${Key.database}?sort[0][field]=Name`)
+            .then(response => {
+
+                this.offset = response.data.offset
+                this.records = this.records.concat(response.data.records)
+
+                if (this.offset === undefined) { setTimeout(() => { $.unblockUI() }, 500); return }
+                setTimeout(() => { this.updateInfo() }, 100)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+            .finally(() => {
+                // setTimeout(() => { $.unblockUI() }, 500)
+            })
+        },
+        /// 選單選完就更新資料
+        onChange() {
+
+            this.records = []
+            this.offset = null
+
+            $.blockUI({ message: '<h1>讀取中...</h1>' })
+            this.updateInfo()
+        },
+    },
+    computed: {},
+    mounted() {
+        this.options = [
+            { key: "Font", value: "Font" },
+            { key: "Linux", value: "Linux" }, 
+            { key: "Software", value: "Software" }, 
+            { key: "Edge", value: "Mircosoft Edge" }, 
+            { key: "Firefox", value: "Firefox" }, 
+            { key: "VisualStudioCode", value: "Visual Studio Code" }, 
+            { key: "OperatingSystem", value: "Operating System" }, 
+            { key: "WebTools", value: "WebTools" }, 
+            { key: "Android", value: "Android" }, 
+            { key: "JavaScript", value: "JavaScript" }, 
+            { key: "Bookmark", value: "Bookmark" }, 
+            { key: "iOS", value: "iOS" },
+            { key: "Grails", value: "Grails" }, 
+            { key: "SQL", value: "SQL" }, 
+        ]
+
+        this.imageMap = new Map([
+            ['zh-TW', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Flag_of_the_Republic_of_China.svg/22px-Flag_of_the_Republic_of_China.svg.png'],
+            ['zh-CN', 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/22px-Flag_of_the_People%27s_Republic_of_China.svg.png'],
+            ['en-US', 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/22px-Flag_of_the_United_States.svg.png'],
+            ['Web', 'https://www.websiterealizer.com/images/website-realizer-logo-24.webp'],
+            ['Unity', 'https://cdn.iconscout.com/icon/free/png-256/unity-5-555544.png'],
+            ['Game', 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Video-Game-Controller-Icon-IDV-green.svg/768px-Video-Game-Controller-Icon-IDV-green.svg.png'],
+            ['Blog', 'https://lh3.googleusercontent.com/proxy/y5kJ3x3_vd4CCRGWnotohkOSpE2Vxpyrlp5tJTAsLEFWB8MgRR2PPQI2u6eBVxpbFokjDurt8onZrsXdDom6IqqMb2KToj7Fhyqq3iIvXVHyDUIcmLw'],
+            ['UI', 'https://appworkstechnologies.in/assets/images/gallery/ui.png'],
+            ['Vue', 'https://miro.medium.com/max/256/1*GrnZQhGidCAjnfE7CUyzcA.png'],
+            ['JavaScript', 'http://www.php-training.in/images/services/javascript-training-mumbai.png'],
+            ['HTML', 'https://clay-atlas.com/wp-content/uploads/2020/02/html.png'],
+            ['CSS', 'https://www.computerhope.com/jargon/c/css.png'],
+            ['Go', 'https://styles.redditmedia.com/t5_2rc7j/styles/communityIcon_wy4riduoe9k11.png?width=256&s=0d681daaa8d4b6271e6be788d0f9379f0661e04a'],
+            ['Rust', 'https://upwiki.footing.dev/wikipedia/commons/thumb/d/d5/Rust_programming_language_black_logo.svg/1200px-Rust_programming_language_black_logo.svg.png'],
+            ['Database', 'http://www.icosky.com/icon/png/System/iVista%202%20OS%20X%20Icons/Download%20Database.png'],
+            ['APP', 'https://developer.apple.com/assets/elements/icons/app-store/app-store-128x128_2x.png'],
+            ['SQL', 'https://docs.microsoft.com/zh-tw/microsoftsearch/media/azuresqlconnectorlogo_medium.png'],
+            ['ProgrammingLanguage', 'https://raw.githubusercontent.com/gonzula/splash/master/imgs/RoundedIcon.png'],
+            ['Python', 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png'],
+            ['Music', 'https://www.gdaily.org/wp-content/uploads/2019/05/YY-Music.png'],
+            ['Software', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpd0NdO_4mH2z1Qjev0uEtwmTRK9UJ3E22R_mhbWy62RQKAHZxxMFEroOjciyFNC9arxc&usqp=CAU'],
+            ['IoT', 'https://cdn.iconscout.com/icon/premium/png-256-thumb/cloud-base-iot-system-2007549-1692740.png'],
+            ['Objective-C', 'https://k2r2bai.com/images/msic/objc.png'],
+            ['.NET', 'https://cdn.iconscout.com/icon/free/png-256/microsoft-dot-net-1-1175179.png'],
+            ['Swift', 'https://lh3.googleusercontent.com/proxy/t6CcVGxamKscQYQ368_WN5jJPZBKGMJ0_Z0XomN9Emuj-_l39ygSNiPW0V6TnPuXxIcXsky0jbNMpvnk1QKgGfeUMyMWmFz40Wn6KhhF3JTGpA6c0KxfklA'],
+            ['macOS', 'https://icons.iconarchive.com/icons/johanchalibert/mac-osx-yosemite/256/finder-icon.png'],
+            ['Android', 'https://cdn2.iconfinder.com/data/icons/metro-uinvert-dock/256/OS_Android.png'],
+            ['Windows', 'https://cdn.iconscout.com/icon/free/png-256/windows-153-569442.png'],
+            ['iOS', 'https://cdn.iconscout.com/icon/free/png-256/ios-apple-572947.png'],
+            ['Linux', 'https://icon-library.com/images/linux-icon/linux-icon-13.jpg'],
+            ['API', 'https://www.tmssoftware.com/site/img/biz/icons/landingbiz1.png'],
+            ['Pricing', 'https://myawesomedetailer.net/wp-content/uploads/2019/04/pricing.png'],
+            ['IDE', 'https://code.visualstudio.com/assets/favicon.ico'],
+            ['Gallery', 'https://upload.wikimedia.org/wikipedia/zh/8/84/Windows_Live_Photo_Gallery_logo.png'],
+            ['Java', 'https://cdn.iconscout.com/icon/free/png-256/java-43-569305.png'],
+            ['Kotlin', 'https://cdn.iconscout.com/icon/free/png-256/kotlin-283155.png'],
+            ['Nodejs', 'https://www.trainersubbu.com/assets/images/node.png'],
+            ['ES6', 'http://www.php-training.in/images/services/javascript-training-mumbai.png'],
+            ['TypeScript', 'https://cdn.iconscout.com/icon/free/png-256/typescript-1174965.png'],
+            ['Angular', 'https://miro.medium.com/max/256/1*3H6_a9Srb655m3NiqlbbKQ.png'],
+            ['jQuery', 'https://ourcodeworld.com/public-media/gallery/categorielogo-5713d24f9fa5f.png'],
+            ['React', 'https://styles.redditmedia.com/t5_2su6s/styles/communityIcon_4g1uo0kd87c61.png'],
+            ['Vue.js', 'https://miro.medium.com/max/256/1*GrnZQhGidCAjnfE7CUyzcA.png'],
+            ['Science', 'https://upload.wikimedia.org/wikipedia/zh/c/cd/March_for_Science.png'],
+            ['Compile', 'https://pic.anxz.com/d/file/2020/07-13/10506b5030fa4c14c8d8284b102fa1d0.png'],
+            ['Runtime', 'https://api.nuget.org/v3-flatcontainer/netdimension.nanui.runtime/80.1.15/icon'],
+        ])
+
+        this.optionValue = this.options[0].key
+        this.onChange()
+    }
+}).mount("#main")
+</script>
