@@ -41,3 +41,6 @@
 
 ## SKStoreProductVC - SKStoreProductViewController - 無法改變背景色的問題
 ![SKStoreProductVC - SKStoreProductViewController - 無法改變背景色的問題](./_GIF_/SKStoreProductVC.png)
+
+## DynamicPageViewController - 新增加PageViewController會閃退的問題 (只有在兩頁的時候會發生)
+![DynamicPageViewController - 新增加PageViewController會閃退的問題 (只有在兩頁的時候會發生)](./_GIF_/DynamicPageViewController.gif)
