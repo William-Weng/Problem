@@ -24,11 +24,20 @@ final class MyPageViewController: UIPageViewController {
 extension MyPageViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        return pageViewController._nextPage(viewControllers: myPageViewControllers, next: viewController, addIndex: 1)
+        
+        let _viewController = pageViewController._nextPage(viewControllers: myPageViewControllers, next: viewController, addIndex: 1) as? DemoViewController
+        
+        // [不允許2頁模式的循環](https://www.thinbug.com/q/47514111)
+        if (myPageViewControllers.count == 2 && _viewController?.view.tag == 0) { return nil }
+        return _viewController
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        return pageViewController._nextPage(viewControllers: myPageViewControllers, next: viewController, addIndex: -1)
+        
+        if (myPageViewControllers.count == 2) { return nil }
+        
+        let _viewController = pageViewController._nextPage(viewControllers: myPageViewControllers, next: viewController, addIndex: -1) as? DemoViewController
+        return _viewController
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
@@ -43,13 +52,13 @@ extension MyPageViewController {
     /// 添加測試用ViewController
     /// - Parameters:
     ///   - backgroundColor: 背景色
-    ///   - text: 文字
     func appendPageViewController(backgroundColor: UIColor) {
         
-        let text = "第\(myPageViewControllers.count + 1)頁"
+        let pageNumber = myPageViewControllers.count
         
-        self.myPageViewControllers.append(demoViewControllerMaker(backgroundColor: backgroundColor, text: text))
+        self.myPageViewControllers.append(demoViewControllerMaker(backgroundColor: backgroundColor, tag: pageNumber))
         self.myDelegate?.numberOfPages(myPageViewControllers.count)
+        
         self._reloadData(dataSource: self)
     }
     
@@ -86,14 +95,16 @@ extension MyPageViewController {
     /// 產生測試頁
     /// - Parameters:
     ///   - backgroundColor: 背景色
-    ///   - text: 文字
+    ///   - tag: Index => 註記用
     /// - Returns: DemoViewController
-    private func demoViewControllerMaker(backgroundColor: UIColor, text: String) -> DemoViewController {
+    private func demoViewControllerMaker(backgroundColor: UIColor, tag: Int) -> DemoViewController {
         
         let viewController = UIStoryboard._instantiateViewController() as DemoViewController
+        let text = "第\(myPageViewControllers.count + 1)頁"
 
         viewController.view.backgroundColor = backgroundColor
         viewController.myLabel.text = text
+        viewController.view.tag = tag
         
         return viewController
     }
