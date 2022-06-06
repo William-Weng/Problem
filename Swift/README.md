@@ -44,3 +44,8 @@
 
 ## DynamicPageViewController - 新增加PageViewController會閃退的問題 (只有在兩頁的時候會發生)
 ![DynamicPageViewController - 新增加PageViewController會閃退的問題 (只有在兩頁的時候會發生)](./_GIF_/DynamicPageViewController.gif)
+
+## RichPushNotification - 推播加上圖片問題 (UNNotificationContentExtension - 圖示大小 / UNNotificationServiceExtension - 沒反應)
+![RichPushNotification - 推播加上圖片問題 (UNNotificationContentExtension / UNNotificationServiceExtension)](./_GIF_/RichPushNotification.gif)
+
+

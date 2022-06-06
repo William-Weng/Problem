@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "wwlog",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWLog",
+      "state" : {
+        "revision" : "99ba6d3801985d2740585db49566cbca16369d39",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "wwprint",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWPrint.git",
+      "state" : {
+        "revision" : "e4ad2863717465f224aa676f10a3a7ff1df58f7c",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}

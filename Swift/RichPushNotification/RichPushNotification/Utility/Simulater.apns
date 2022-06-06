@@ -1,0 +1,10 @@
+{
+  "Simulator Target Bundle": "idv.william.RichPushNotification",
+  "aps": {
+    "category": "MyCategory",
+    "alert": { "title": "Xcode 13.4.1", "subtitle": "macOS 12.4", "body": "mac mini M1" },
+    "mutable-content": 1,
+  },
+  "image": "https://goo.gl/jh24KY"
+}
+
