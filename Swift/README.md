@@ -49,4 +49,4 @@
 ![RichPushNotification - 推播加上圖片問題 (UNNotificationContentExtension / UNNotificationServiceExtension)](./_GIF_/RichPushNotification.gif)
 
 ## BlueToothDemo - 藍牙UUID問題 (要怎麼判斷連到的是AirPods呢？)
-![BlueToothDemo - 藍牙UUID問題](./_GIF_/BlueToothDemo.png)
+![BlueToothDemo](./_GIF_/BlueToothDemo.PNG)
