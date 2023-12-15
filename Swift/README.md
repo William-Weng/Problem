@@ -50,3 +50,7 @@
 
 ## BlueToothDemo - 藍牙UUID問題 (要怎麼判斷連到的是AirPods呢？)
 ![BlueToothDemo](./_GIF_/BlueToothDemo.PNG)
+
+## DynamicCellHeight - TableView折疊問題 (要如何讓Cell上有字的View不見呢？)
+![DynamicCellHeight](./_GIF_/DynamicCellHeight.gif)
+
