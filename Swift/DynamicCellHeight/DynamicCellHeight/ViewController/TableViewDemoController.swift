@@ -12,8 +12,11 @@ final class TableViewDemoController: UIViewController {
 
     @IBOutlet weak var myTableView: UITableView!
     
+    private var count = 100
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         myTableView._registerNibCell(with: TableViewCell.self)
         myTableView.delegate = self
         myTableView.dataSource = self
@@ -23,7 +26,7 @@ final class TableViewDemoController: UIViewController {
 extension TableViewDemoController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -35,6 +38,6 @@ extension TableViewDemoController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        TableViewCell.exchangeExpandState(tableView, indexPath: indexPath)
+        TableViewCell.exchangeExpandState(tableView, indexPath: indexPath, isSingle: true)
     }
 }

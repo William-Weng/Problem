@@ -8,23 +8,32 @@
 import UIKit
 import WWPrint
 
-class TableViewCell: UITableViewCell, WWExpandTableViewCell, CellReusable {
+class WWExpandView: UIView {}
+
+class TableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var myExpandView: WWExpandView!
+    @IBOutlet weak var myLabel: UILabel!
     
     static var expandRows: Set<IndexPath> = []
     
     var indexPath: IndexPath = []
-    var cellHeightConstraint: NSLayoutConstraint?
+    var heightConstraint: NSLayoutConstraint?
+}
 
-    @IBOutlet weak var myLabel: UILabel!
-    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
-        
+extension TableViewCell: CellReusable {
+    
     func configure(with indexPath: IndexPath) {
-        
-        cellHeightConstraint = heightConstraint
-        
-        heightConstraint.constant = 0
         self.indexPath = indexPath
-        
         myLabel.text = "\(indexPath)"
+        myExpandView.isHidden = true
+        Self.expandRows.insert(indexPath)
+    }
+}
+
+extension TableViewCell: CellExpandable {
+    
+    func expandView() -> WWExpandView? {
+        return myExpandView
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WWPrint
 
 protocol CellReusable: AnyObject {
     
@@ -15,38 +16,48 @@ protocol CellReusable: AnyObject {
     func configure(with indexPath: IndexPath)
 }
 
-protocol WWExpandTableViewCell: AnyObject {
+protocol CellExpandable: AnyObject {
     
     static var expandRows: Set<IndexPath> { get set }
-    var cellHeightConstraint: NSLayoutConstraint? { get set }
+    var heightConstraint: NSLayoutConstraint? { get set }
+
+    static func exchangeExpandState(_ tableView: UITableView, indexPath: IndexPath, isSingle: Bool)
     
-    static func exchangeExpandState(_ tableView: UITableView, indexPath: IndexPath)
+    func expandView() -> WWExpandView?
 }
 
-extension WWExpandTableViewCell {
+extension CellExpandable {
     
     /// 交換折疊狀態
     /// - Parameters:
     ///   - tableView: UITableView
     ///   - indexPath: IndexPath
-    static func exchangeExpandState(_ tableView: UITableView, indexPath: IndexPath) {
+    static func exchangeExpandState(_ tableView: UITableView, indexPath: IndexPath, isSingle: Bool) {
         
-        let cell = tableView.visibleCells.first { cell in
-            guard let cell = cell as? CellReusable,
-                  cell.indexPath == indexPath
-            else {
-                return false
-            }
-            return true
+        let visibleCells = tableView.visibleCells.compactMap { cell -> (CellReusable & CellExpandable)? in
+            guard let cell = cell as? CellReusable & CellExpandable else { return nil }
+            return cell
+        }
+        
+        let selectedCell = visibleCells.first { cell in
+            return cell.indexPath == indexPath
+        }
+
+        UIView.animate(withDuration: 0.25, delay: 0) {
             
-        } as? WWExpandTableViewCell
-                
-        if !Self.expandRows.contains(indexPath) {
-            Self.expandRows.insert(indexPath)
-            cell?.cellHeightConstraint?.constant = 0
-        } else {
-            Self.expandRows.remove(indexPath)
-            cell?.cellHeightConstraint?.constant = 250
+            if (isSingle) {
+                visibleCells.forEach { cell in
+                    if (!cell.expandView()!.isHidden) { cell.expandView()?.isHidden = true }
+                }
+            }
+            
+            if !Self.expandRows.contains(indexPath) {
+                Self.expandRows.insert(indexPath)
+                selectedCell?.expandView()?.isHidden = true
+            } else {
+                Self.expandRows.remove(indexPath)
+                selectedCell?.expandView()?.isHidden = false
+            }
         }
         
         tableView.beginUpdates()
