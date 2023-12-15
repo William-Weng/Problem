@@ -43,6 +43,8 @@ extension CellExpandable {
             return cell.indexPath == indexPath
         }
 
+        tableView.beginUpdates()
+        
         UIView.animate(withDuration: 0.25, delay: 0) {
             
             if (isSingle) {
@@ -60,7 +62,6 @@ extension CellExpandable {
             }
         }
         
-        tableView.beginUpdates()
         tableView.endUpdates()
     }
 }
