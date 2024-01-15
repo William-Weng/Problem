@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dyl-0f-9pf">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Combine-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftCombineFirst" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oEw-2z-hp9">
+                                <rect key="frame" x="0.0" y="91" width="428" height="579"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQc-kh-9OL">
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="499"/>
+                                        <subviews>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dd4-8O-BPj">
+                                                <rect key="frame" x="8" y="8" width="412" height="483"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ADC-HH-6Jv">
+                                                        <rect key="frame" x="8" y="0.0" width="404" height="1264"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7G-Lk-Kce">
+                                                                <rect key="frame" x="0.0" y="0.0" width="404" height="64"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udt-w7-Hre">
+                                                                        <rect key="frame" x="8" y="8" width="388" height="48"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="帳號" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUU-Xc-AmV">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aor-wI-g6k">
+                                                                                <rect key="frame" x="48" y="0.0" width="36" height="48"/>
+                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N31-ap-5s3">
+                                                                                <rect key="frame" x="84" y="0.0" width="304" height="48"/>
+                                                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                                                                            </textField>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="udt-w7-Hre" firstAttribute="top" secondItem="l7G-Lk-Kce" secondAttribute="top" constant="8" id="1Ha-wi-5vC"/>
+                                                                    <constraint firstItem="udt-w7-Hre" firstAttribute="leading" secondItem="l7G-Lk-Kce" secondAttribute="leading" constant="8" id="8LU-no-QNS"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="udt-w7-Hre" secondAttribute="bottom" constant="8" id="8fz-Um-vY5"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="udt-w7-Hre" secondAttribute="trailing" constant="8" id="Uby-WW-AdR"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mnQ-pA-j8Z">
+                                                                <rect key="frame" x="0.0" y="80" width="404" height="64"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3i7-cK-IrA">
+                                                                        <rect key="frame" x="8" y="8" width="388" height="48"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="電郵" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QiH-JC-Opi">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prZ-pF-pdI">
+                                                                                <rect key="frame" x="48" y="0.0" width="36" height="48"/>
+                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <textField opaque="NO" tag="201" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WFM-Uv-rBL">
+                                                                                <rect key="frame" x="84" y="0.0" width="304" height="48"/>
+                                                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                                                                            </textField>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="3i7-cK-IrA" firstAttribute="top" secondItem="mnQ-pA-j8Z" secondAttribute="top" constant="8" id="4NI-Ev-3Yv"/>
+                                                                    <constraint firstItem="3i7-cK-IrA" firstAttribute="leading" secondItem="mnQ-pA-j8Z" secondAttribute="leading" constant="8" id="S1G-Ck-T62"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="3i7-cK-IrA" secondAttribute="trailing" constant="8" id="dqB-qa-kCn"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="3i7-cK-IrA" secondAttribute="bottom" constant="8" id="vOx-v2-onD"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wsE-l7-IKI">
+                                                                <rect key="frame" x="0.0" y="160" width="404" height="64"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3g-nb-SXT">
+                                                                        <rect key="frame" x="8" y="8" width="388" height="48"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密碼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1m-SH-gRZ">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfx-Aw-qLM">
+                                                                                <rect key="frame" x="48" y="0.0" width="36" height="48"/>
+                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <textField opaque="NO" tag="301" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3wp-T3-goj">
+                                                                                <rect key="frame" x="84" y="0.0" width="304" height="48"/>
+                                                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                                            </textField>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="bottom" secondItem="e3g-nb-SXT" secondAttribute="bottom" constant="8" id="1FS-iL-ees"/>
+                                                                    <constraint firstItem="e3g-nb-SXT" firstAttribute="leading" secondItem="wsE-l7-IKI" secondAttribute="leading" constant="8" id="96E-nG-3km"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="e3g-nb-SXT" secondAttribute="trailing" constant="8" id="BnC-Ux-IZv"/>
+                                                                    <constraint firstItem="e3g-nb-SXT" firstAttribute="top" secondItem="wsE-l7-IKI" secondAttribute="top" constant="8" id="oAa-ir-pPE"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sPB-19-ljD">
+                                                                <rect key="frame" x="0.0" y="240" width="404" height="64"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QnF-M5-bca">
+                                                                        <rect key="frame" x="8" y="8" width="388" height="48"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是來湊人數的" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncw-jl-v2k">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="388" height="48"/>
+                                                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="QnF-M5-bca" firstAttribute="leading" secondItem="sPB-19-ljD" secondAttribute="leading" constant="8" id="7Ud-Tt-CBS"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="QnF-M5-bca" secondAttribute="trailing" constant="8" id="P9R-QZ-hpS"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="QnF-M5-bca" secondAttribute="bottom" constant="8" id="it7-jA-6NR"/>
+                                                                    <constraint firstItem="QnF-M5-bca" firstAttribute="top" secondItem="sPB-19-ljD" secondAttribute="top" constant="8" id="xx6-7d-a7Q"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a7N-cR-qb0">
+                                                                <rect key="frame" x="0.0" y="320" width="404" height="64"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sV0-7b-HLU">
+                                                                        <rect key="frame" x="8" y="8" width="388" height="48"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是來湊人數的" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1Y-b8-0X3">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="388" height="48"/>
+                                                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="bottom" secondItem="sV0-7b-HLU" secondAttribute="bottom" constant="8" id="NR4-g6-5l8"/>
+                                                                    <constraint firstItem="sV0-7b-HLU" firstAttribute="leading" secondItem="a7N-cR-qb0" secondAttribute="leading" constant="8" id="dWN-1Y-Aw7"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="sV0-7b-HLU" secondAttribute="trailing" constant="8" id="mae-Wt-aTt"/>
+                                                                    <constraint firstItem="sV0-7b-HLU" firstAttribute="top" secondItem="a7N-cR-qb0" secondAttribute="top" constant="8" id="nu7-6P-BYT"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g72-EZ-vwr">
+                                                                <rect key="frame" x="0.0" y="400" width="404" height="64"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PjB-vo-7Yn">
+                                                                        <rect key="frame" x="8" y="8" width="388" height="48"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是來湊人數的" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29L-ms-vH3">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="388" height="48"/>
+                                                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="PjB-vo-7Yn" firstAttribute="leading" secondItem="g72-EZ-vwr" secondAttribute="leading" constant="8" id="2sB-Vt-Ve8"/>
+                                                                    <constraint firstItem="PjB-vo-7Yn" firstAttribute="top" secondItem="g72-EZ-vwr" secondAttribute="top" constant="8" id="705-cE-w3R"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="PjB-vo-7Yn" secondAttribute="bottom" constant="8" id="MUY-qI-gza"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="PjB-vo-7Yn" secondAttribute="trailing" constant="8" id="gxD-qP-QUW"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qtz-9t-c3b">
+                                                                <rect key="frame" x="0.0" y="480" width="404" height="64"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ad-1Y-xdi">
+                                                                        <rect key="frame" x="8" y="8" width="388" height="48"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是來湊人數的" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDy-BB-GK2">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="388" height="48"/>
+                                                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="9Ad-1Y-xdi" firstAttribute="top" secondItem="qtz-9t-c3b" secondAttribute="top" constant="8" id="6Yw-iI-HV5"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="9Ad-1Y-xdi" secondAttribute="bottom" constant="8" id="7fX-sW-SMH"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="9Ad-1Y-xdi" secondAttribute="trailing" constant="8" id="Mbr-gJ-yDC"/>
+                                                                    <constraint firstItem="9Ad-1Y-xdi" firstAttribute="leading" secondItem="qtz-9t-c3b" secondAttribute="leading" constant="8" id="tuW-jN-UDc"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNK-L6-Kfc">
+                                                                <rect key="frame" x="0.0" y="560" width="404" height="64"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="za3-3e-5g7">
+                                                                        <rect key="frame" x="8" y="8" width="388" height="48"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是來湊人數的" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7s-P9-STO">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="388" height="48"/>
+                                                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="za3-3e-5g7" secondAttribute="trailing" constant="8" id="5hY-Lm-Lkn"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="za3-3e-5g7" secondAttribute="bottom" constant="8" id="5hq-bu-wY3"/>
+                                                                    <constraint firstItem="za3-3e-5g7" firstAttribute="top" secondItem="PNK-L6-Kfc" secondAttribute="top" constant="8" id="UdW-im-TNz"/>
+                                                                    <constraint firstItem="za3-3e-5g7" firstAttribute="leading" secondItem="PNK-L6-Kfc" secondAttribute="leading" constant="8" id="l1J-6E-EIA"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="687-pB-W2E">
+                                                                <rect key="frame" x="0.0" y="640" width="404" height="64"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bB3-lf-M5R">
+                                                                        <rect key="frame" x="8" y="8" width="388" height="48"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是來湊人數的" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpM-xc-oH1">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="388" height="48"/>
+                                                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="bB3-lf-M5R" firstAttribute="top" secondItem="687-pB-W2E" secondAttribute="top" constant="8" id="YRM-Ut-scm"/>
+                                                                    <constraint firstItem="bB3-lf-M5R" firstAttribute="leading" secondItem="687-pB-W2E" secondAttribute="leading" constant="8" id="agh-dX-OBv"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="bB3-lf-M5R" secondAttribute="bottom" constant="8" id="jKw-LX-Woo"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="bB3-lf-M5R" secondAttribute="trailing" constant="8" id="kTK-7S-noQ"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VFm-gG-QgL">
+                                                                <rect key="frame" x="0.0" y="720" width="404" height="64"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bTH-Dh-6la">
+                                                                        <rect key="frame" x="8" y="8" width="388" height="48"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是來湊人數的" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8i-mO-PIx">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="388" height="48"/>
+                                                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="bTH-Dh-6la" firstAttribute="top" secondItem="VFm-gG-QgL" secondAttribute="top" constant="8" id="1BV-kR-1yX"/>
+                                                                    <constraint firstItem="bTH-Dh-6la" firstAttribute="leading" secondItem="VFm-gG-QgL" secondAttribute="leading" constant="8" id="5mo-Nq-H76"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="bTH-Dh-6la" secondAttribute="trailing" constant="8" id="MMe-4e-CUg"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="bTH-Dh-6la" secondAttribute="bottom" constant="8" id="mnC-v9-dyT"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WIa-2Z-efq">
+                                                                <rect key="frame" x="0.0" y="800" width="404" height="64"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mj0-jX-EgN">
+                                                                        <rect key="frame" x="8" y="8" width="388" height="48"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是來湊人數的" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yas-l2-0v7">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="388" height="48"/>
+                                                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="Mj0-jX-EgN" firstAttribute="leading" secondItem="WIa-2Z-efq" secondAttribute="leading" constant="8" id="4SY-nL-1yB"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="Mj0-jX-EgN" secondAttribute="trailing" constant="8" id="U5M-F4-wi9"/>
+                                                                    <constraint firstItem="Mj0-jX-EgN" firstAttribute="top" secondItem="WIa-2Z-efq" secondAttribute="top" constant="8" id="d8A-h1-W8Q"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="Mj0-jX-EgN" secondAttribute="bottom" constant="8" id="qvT-c8-bAM"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="49u-fq-fqQ">
+                                                                <rect key="frame" x="0.0" y="880" width="404" height="64"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CEz-bX-8D0">
+                                                                        <rect key="frame" x="8" y="8" width="388" height="48"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是來湊人數的" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvE-G6-19J">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="388" height="48"/>
+                                                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="CEz-bX-8D0" firstAttribute="leading" secondItem="49u-fq-fqQ" secondAttribute="leading" constant="8" id="C8r-lO-9SA"/>
+                                                                    <constraint firstItem="CEz-bX-8D0" firstAttribute="top" secondItem="49u-fq-fqQ" secondAttribute="top" constant="8" id="EAN-n2-pdX"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="CEz-bX-8D0" secondAttribute="trailing" constant="8" id="LTf-Ig-dyb"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="CEz-bX-8D0" secondAttribute="bottom" constant="8" id="iZo-Ad-1CW"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dYS-qU-n3h">
+                                                                <rect key="frame" x="0.0" y="960" width="404" height="64"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Yt-eT-HDY">
+                                                                        <rect key="frame" x="8" y="8" width="388" height="48"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是來湊人數的" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWI-DH-6aH">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="388" height="48"/>
+                                                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="4Yt-eT-HDY" firstAttribute="top" secondItem="dYS-qU-n3h" secondAttribute="top" constant="8" id="3PA-io-eLP"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="4Yt-eT-HDY" secondAttribute="bottom" constant="8" id="5Qp-2j-hmn"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="4Yt-eT-HDY" secondAttribute="trailing" constant="8" id="t6m-Gt-6Sp"/>
+                                                                    <constraint firstItem="4Yt-eT-HDY" firstAttribute="leading" secondItem="dYS-qU-n3h" secondAttribute="leading" constant="8" id="tdw-1Z-QHw"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oht-Zi-sHx">
+                                                                <rect key="frame" x="0.0" y="1040" width="404" height="64"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VIh-O8-2Rl">
+                                                                        <rect key="frame" x="8" y="8" width="388" height="48"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是來湊人數的" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdw-mn-R7Y">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="388" height="48"/>
+                                                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="VIh-O8-2Rl" firstAttribute="leading" secondItem="oht-Zi-sHx" secondAttribute="leading" constant="8" id="ToK-nj-prw"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="VIh-O8-2Rl" secondAttribute="trailing" constant="8" id="VBx-WL-atU"/>
+                                                                    <constraint firstItem="VIh-O8-2Rl" firstAttribute="top" secondItem="oht-Zi-sHx" secondAttribute="top" constant="8" id="fVG-vi-41r"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="VIh-O8-2Rl" secondAttribute="bottom" constant="8" id="lfi-0U-eaL"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pWG-oY-aqt">
+                                                                <rect key="frame" x="0.0" y="1120" width="404" height="64"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xve-D2-jSk">
+                                                                        <rect key="frame" x="8" y="8" width="388" height="48"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是來湊人數的" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEy-kW-LuF">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="388" height="48"/>
+                                                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="Xve-D2-jSk" secondAttribute="trailing" constant="8" id="EQu-TT-Ss0"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="Xve-D2-jSk" secondAttribute="bottom" constant="8" id="L82-0K-vP8"/>
+                                                                    <constraint firstItem="Xve-D2-jSk" firstAttribute="top" secondItem="pWG-oY-aqt" secondAttribute="top" constant="8" id="faN-Hy-tbH"/>
+                                                                    <constraint firstItem="Xve-D2-jSk" firstAttribute="leading" secondItem="pWG-oY-aqt" secondAttribute="leading" constant="8" id="vWz-qe-tNe"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5U-hY-BDJ">
+                                                                <rect key="frame" x="0.0" y="1200" width="404" height="64"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zq6-Pz-N1W">
+                                                                        <rect key="frame" x="8" y="8" width="388" height="48"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是來湊人數的" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abX-PQ-2Dd">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="388" height="48"/>
+                                                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="Zq6-Pz-N1W" secondAttribute="trailing" constant="8" id="13c-35-eT0"/>
+                                                                    <constraint firstItem="Zq6-Pz-N1W" firstAttribute="top" secondItem="U5U-hY-BDJ" secondAttribute="top" constant="8" id="85u-I8-3m3"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="Zq6-Pz-N1W" secondAttribute="bottom" constant="8" id="udg-v9-Imw"/>
+                                                                    <constraint firstItem="Zq6-Pz-N1W" firstAttribute="leading" secondItem="U5U-hY-BDJ" secondAttribute="leading" constant="8" id="y0K-Xx-ZN8"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="l7G-Lk-Kce" firstAttribute="top" secondItem="ADC-HH-6Jv" secondAttribute="top" id="6pC-oV-jUU"/>
+                                                            <constraint firstAttribute="trailing" secondItem="l7G-Lk-Kce" secondAttribute="trailing" id="JcF-ZI-WFQ"/>
+                                                            <constraint firstItem="l7G-Lk-Kce" firstAttribute="leading" secondItem="ADC-HH-6Jv" secondAttribute="leading" id="d4c-vi-sxe"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="ADC-HH-6Jv" firstAttribute="width" secondItem="TCb-5B-7zR" secondAttribute="width" constant="-8" id="BEG-K7-6f7"/>
+                                                    <constraint firstItem="ADC-HH-6Jv" firstAttribute="top" secondItem="tn8-Io-8As" secondAttribute="top" id="KWa-BY-4T5"/>
+                                                    <constraint firstItem="ADC-HH-6Jv" firstAttribute="leading" secondItem="tn8-Io-8As" secondAttribute="leading" constant="8" id="Z0j-UY-Vqx"/>
+                                                    <constraint firstItem="ADC-HH-6Jv" firstAttribute="trailing" secondItem="tn8-Io-8As" secondAttribute="trailing" id="dy6-Ib-nxt"/>
+                                                    <constraint firstItem="ADC-HH-6Jv" firstAttribute="bottom" secondItem="tn8-Io-8As" secondAttribute="bottom" id="esw-wN-vIL"/>
+                                                </constraints>
+                                                <viewLayoutGuide key="contentLayoutGuide" id="tn8-Io-8As"/>
+                                                <viewLayoutGuide key="frameLayoutGuide" id="TCb-5B-7zR"/>
+                                            </scrollView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="dd4-8O-BPj" firstAttribute="top" secondItem="AQc-kh-9OL" secondAttribute="top" constant="8" id="fEo-fd-8l3"/>
+                                            <constraint firstItem="dd4-8O-BPj" firstAttribute="leading" secondItem="AQc-kh-9OL" secondAttribute="leading" constant="8" id="jT6-IR-kwY"/>
+                                            <constraint firstAttribute="trailing" secondItem="dd4-8O-BPj" secondAttribute="trailing" constant="8" id="zOg-D6-4PT"/>
+                                            <constraint firstAttribute="bottom" secondItem="dd4-8O-BPj" secondAttribute="bottom" constant="8" id="zun-SB-9jq"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTq-fg-inJ">
+                                        <rect key="frame" x="0.0" y="507" width="428" height="72"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4RO-Yj-l6X">
+                                                <rect key="frame" x="32" y="0.0" width="364" height="56"/>
+                                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="56" id="eta-qo-BSa"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="註冊"/>
+                                                <connections>
+                                                    <segue destination="Ncm-O7-rzK" kind="show" id="0lI-ap-hee"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="4RO-Yj-l6X" firstAttribute="centerX" secondItem="aTq-fg-inJ" secondAttribute="centerX" id="3qy-zH-ffM"/>
+                                            <constraint firstItem="4RO-Yj-l6X" firstAttribute="top" secondItem="aTq-fg-inJ" secondAttribute="top" id="QYr-HV-vPn"/>
+                                            <constraint firstAttribute="bottom" secondItem="4RO-Yj-l6X" secondAttribute="bottom" constant="16" id="eWu-FN-lks"/>
+                                            <constraint firstAttribute="trailing" secondItem="4RO-Yj-l6X" secondAttribute="trailing" constant="32" id="hZ3-I6-MBu"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ue-eM-e96">
+                                <rect key="frame" x="0.0" y="670" width="428" height="256"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="2dJ-0b-ZDh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oEw-2z-hp9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5Ha-Co-wuF"/>
+                            <constraint firstItem="oEw-2z-hp9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8bo-yD-8ym"/>
+                            <constraint firstItem="8ue-eM-e96" firstAttribute="top" secondItem="oEw-2z-hp9" secondAttribute="bottom" id="WIV-rA-O3t"/>
+                            <constraint firstItem="8ue-eM-e96" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cOu-bf-Rit"/>
+                            <constraint firstItem="8ue-eM-e96" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fNv-lu-qXl"/>
+                            <constraint firstItem="oEw-2z-hp9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lrg-CJ-HSE"/>
+                            <constraint firstAttribute="bottom" secondItem="8ue-eM-e96" secondAttribute="bottom" id="o01-jZ-FD4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Combine" id="nvs-zi-2RQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="zLv-2C-k2y">
+                            <connections>
+                                <action selector="clearInputValues:" destination="BYZ-38-t0r" id="c5l-YT-IwU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="eMailTextField" destination="WFM-Uv-rBL" id="4ZV-mz-Ipu"/>
+                        <outlet property="fakeKeyboardView" destination="8ue-eM-e96" id="BCp-OV-0A2"/>
+                        <outlet property="keyboardHeightConstraint" destination="2dJ-0b-ZDh" id="xWr-TX-nuN"/>
+                        <outlet property="passwordTextField" destination="3wp-T3-goj" id="Gdi-Af-Iq7"/>
+                        <outlet property="registerButton" destination="4RO-Yj-l6X" id="spr-LD-HDN"/>
+                        <outlet property="usernameTextField" destination="N31-ap-5s3" id="VEF-rU-roL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <stackView opaque="NO" contentMode="scaleToFill" id="U8u-39-4pL">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="110"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <viewLayoutGuide key="safeArea" id="YiS-AT-mZo"/>
+                </stackView>
+            </objects>
+            <point key="canvasLocation" x="1021.9626168224298" y="93.30453563714903"/>
+        </scene>
+        <!--Next View Controller-->
+        <scene sceneID="1Lc-A6-U7Q">
+            <objects>
+                <viewController id="Ncm-O7-rzK" customClass="NextViewController" customModule="SwiftCombineFirst" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1HY-lO-5U0">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MNv-HI-tSd">
+                                <rect key="frame" x="20" y="91" width="388" height="835"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <mutableString key="text">Apple Vision Pro — Apple 第一部空間運算設備
+
+加州 CUPERTINO Apple 今日發布 Apple Vision Pro，一部革命性的空間運算設備，將數位內容無縫融入實體世界，讓使用者處在當下並與他人保持連結。Apple Vision Pro 打造一塊無邊際畫布，讓 app 超越傳統顯示器的限制，推出全 3D 使用者介面，以最自然、直覺的輸入方式來控制，也就是透過使用者的眼睛、雙手與聲音。Apple Vision Pro 搭載全球首創之空間作業系統 visionOS，讓使用者與數位內容互動的方式就像內容實體存在於使用者的空間之中。Apple Vision Pro 突破性的設計搭載超高解析度顯示系統，將 2,300 萬畫素置於兩個顯示器中，獨特雙晶片設計的訂製 Apple晶片，確保每個體驗都感覺是在使用者眼前即時發生。
+
+
+「今天標記了運算新紀元的開始」Apple 執行長 Tim Cook 說。「如同 Mac 將我們帶入個人運算時代，iPhone 將我們帶入行動運算時代，Apple Vision Pro 將帶我們進入空間運算時代。Apple Vision Pro 奠基於 Apple 數十年的創新基礎，Apple Vision Pro 獨步全球，是前所未見的創舉，帶來革命性的新輸入系統與數以千計的創新。它為使用者釋放絕佳體驗，並為開發者帶來振奮人心的新機會。」
+「打造第一台空間運算設備幾乎需要重新發明系統的每個面向。」Apple 技術開發團隊副總裁 Mike Rockwell 說。「透過軟硬體密切整合，我們以精巧可穿戴之尺寸設計了一款能獨立運作的空間運算設備，為迄今所見最先進之個人電子裝置。」
+
+絕佳新體驗
+Apple Vision Pro 改變使用者與自己最喜歡的 app 互動、捕捉並重溫回憶、享受精彩電視節目與電影，以及在 FaceTime 與他人連結的方式，為強大且個人化的運算創造新面向。
+一塊給 app 的無邊際畫布，工作、在家適用：visionOS 提供 3D 介面，讓 app 不再受制於顯示器的邊界，app 可以任何大小比例並排。Apple Vision Pro 讓使用者利用無邊的螢幕面積來提高生產力，存取常用的 app，發現全新的多工方式。Apple Vision Pro 支援巧控鍵盤與巧控板，使用者可設定完美的工作空間，或將 Mac 強大的能力以無線方式帶入 Apple Vision Pro，打造巨大、私人且可攜之 4K 顯示器，呈現清晰文字。
+
+引人入勝的娛樂體驗：透過兩個超高解析度顯示器，Apple Vision Pro 可將任何空間轉換成個人電影院，螢幕感覺猶如 30 公尺寬，並搭載先進之空間音訊系統。使用者可觀賞電影與電視節目，或享受精彩的 3D 電影。Apple Immersive Video 提供 180 度高解析影片並搭載空間音訊，使用者能存取一系列精彩的沈浸式影片，瞬間將他們帶到全新的地方。
+空間運算讓新遊戲類型得以成真，遊戲可提供各種沈浸程度之體驗，帶玩家進入嶄新的世界。使用者可在無限廣大之螢幕上暢玩 100 多個 Apple Arcade 遊戲，享受精彩的沈浸式音訊，並支援常用之遊戲控制手柄。
+
+沈浸式「空間環境」：「空間環境」讓使用者的世界超越實體空間的邊界，動態、美麗的景觀幫助使用者專注或減少繁忙環境中的雜亂。調整「數位旋鈕」讓使用者控制在「空間環境」中感受現實或沈浸的程度。 
+
+回憶變得栩栩如生: Apple Vision Pro 搭載 Apple 第一台 3D 相機，讓使用者捕捉、重現並搭配空間音訊一同沈浸在最喜歡的回憶中。每一張空間照片和每一支空間影片都將使用者帶回到那個難忘的瞬間，像與朋友歡慶的時光或是某次意義重大的家庭聚會。使用者能存取 iCloud 完整的照片圖庫，以真實的尺寸比例、鮮豔的色彩及絕佳的細節來瀏覽他們的照片和影片。每一張 iPhone 拍攝的全景照片都能展開圍繞使用者，彷彿置身其中。 
+
+充滿空間感的 FaceTime: Apple Vision Pro 讓 FaceTime 利用使用者所在的空間，通話時每一位參與者都會即時以真實大小的方塊呈現，還有空間音訊，讓聲音聽起來就像從那個人所在的地方發出來的一樣。配戴 Apple Vision Pro 的使用者，在 FaceTime 通話時會以 Apple 最先進的機器學習技術所打造的數位 Persona 呈現，即時反映使用者的臉部及手部動作。使用者可一同看電影、瀏覽照片或是合作簡報。
+
+更多的 app 體驗: Apple Vision Pro 有全新的 App Store 讓使用者可以發掘開發者提供的 app 與內容，以及數以萬計在 iPhone 和 iPad 上熟悉的 apps 都能直接在 Apple Vision Pro 的新系統上自動順利運行。Apple 的開發者社群能夠更深入利用 Apple Vision Pro 和 visionOS 既強大又獨特的功能來設計全新的 app 和為空間運算重新塑造現有的 app 體驗。
+
+革命性的作業系統和使用者介面
+奠基於 macOS、iOS 與 iPadOS 數十年的工程創新基礎，visionOS 從設計之初就支援空間運算對低延遲的要求。其成果就是帶來革命性的作業系統，提供強大之空間體驗，利用使用者周圍的空間，在工作與家庭釋放各種新機會。
+visionOS 搭載全新的3D 介面，讓數位內容看起來、感覺上就像在使用者的實體世界存在。透過自然光線和陰影的變化，幫助使用者理解比例與距離。為了讓使用者探索和與空間內容互動，Apple Vision Pro帶來全新的輸入系統，由使用者的眼睛、雙手和語音來控制。使用者瀏覽 app 時，只要輕鬆地看著它們、手指輕捏來選擇、輕拂手腕來滾動，或使用聽寫輸入。
+
+Apple Vision Pro 也搭載 EyeSight，一項超凡的創新，幫助使用者與周圍的人保持連結。有人靠近配戴 Apple Vision Pro 的使用者時，使用者會感覺眼前變透明，讓使用者看到靠近的人，同時顯示使用者的眼睛。使用者沈浸於空間環境或使用 app 時，EyeSight 會給他人視覺線索，讓他人知道使用者在專心做什麼。
+
+
+突破性的設計
+Apple Vision Pro 奠基於 Apple 的創新能力與設計高性能產品的經驗，這些產品包括Mac、iPhone 與穿戴式裝置例如 Apple Watch，集各方大成實現迄今最先進之個人電子裝置。為達到性能、行動力與可穿戴性的宏大目標，Apple 使用了最先進的材料。
+
+Apple Vision Pro 在精巧的設計中搭載驚人數量的尖端科技。單片 3D 成型與層壓的玻璃打磨形成光學表面，作為一系列相機和感測器的鏡片，以將數位內容與真實世界結合。訂制的鋁合金邊框在使用者的臉周圍微微彎曲與玻璃完美融合，模組化的設計能個別調整以符合各式各樣的人。遮光眼罩使用柔軟的織物，提供各種尺寸和形狀以服貼每一位使用者的臉型。鬆緊帶確保音訊保持靠近使用者的耳朵，多尺寸的頭帶採用 3D 織法不僅舒適、透氣並具有彈性1。頭帶透過單一機制固定，容易更換尺寸及造型。.
+
+無可比擬的硬體創新
+Apple Vision Pro 的設計旨在精巧的穿戴裝置上提供無與倫比的運算表現。配備基於 Apple 晶片的突破性超高解析顯示器系統，Apple Vision Pro 使用 micro-OLED 技術將 2,300 萬畫素搭載入兩個郵票大小的顯示器，具備廣色域和 HDR。此技術突破與訂製反射折射鏡片實現令人驚豔的銳利度和清晰度，帶來難以置信的絕佳體驗。有視覺矯正需求的使用者可插入 ZEISS 光學鏡片，以確保視覺保真度與眼球追蹤精準度2。
+
+
+除了突破性的顯示和先進的音訊體驗，Apple Vision Pro 的高效眼追蹤系統使用高速攝影機和一圈 LED 投射不可見的光圖像至使用者的眼球以獲取即時的直覺反饋。
+這些超凡創新由 Apple 晶片驅動，獨特雙晶片設計的 M2 帶來無可比擬的獨立表現，而全新的 R1 晶片處理來自 12 部相機、5 個傳感器和 6 個麥克風的資料，以確保使用者眼前的實時內容毫無延遲。R1可在12 毫秒內將新影像串流至顯示器，比眨眼還要快 8 倍。Apple Vision Pro 在插著電源時可供全天使用，搭配外接高效電池的使用時間最長可達 2 小時。
+
+
+領先業界的隱私和安全
+Apple Vision Pro 以強大的隱私和安全為基礎打造，並讓使用者掌控他們的資訊。
+Optic ID 是全新的安全認證系統，透過分析在各種不可見 LED 光下的使用者虹膜，再將其與儲存在安全隔區的使用者註冊 Optic ID 比對以迅速解鎖 Apple Vision Pro。 使用者的 Optic ID 資訊完全加密儲存在設備上，代表不會儲存在 Apple 伺服器上，也無法被任何 app 所存取。
+使用者在使用 Apple Vision Pro 時的瀏覽內容和眼追蹤資訊均不會與 Apple、第三方 apps 或網站分享。除此之外，來自相機和其他傳感器的資料均直接在系統端處理，所以個別應用程式不需要看見使用者的周遭環境來提供空間體驗。EyeSight 也包含一個視覺指示燈，讓周圍的人知道使用者正在拍攝空間照片或影片。</mutableString>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8B9-CI-msg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8B9-CI-msg" firstAttribute="trailing" secondItem="MNv-HI-tSd" secondAttribute="trailing" constant="20" id="G5N-VB-w2n"/>
+                            <constraint firstAttribute="bottom" secondItem="MNv-HI-tSd" secondAttribute="bottom" id="U0N-fb-787"/>
+                            <constraint firstItem="MNv-HI-tSd" firstAttribute="leading" secondItem="8B9-CI-msg" secondAttribute="leading" constant="20" id="YKh-b6-ZsQ"/>
+                            <constraint firstItem="MNv-HI-tSd" firstAttribute="top" secondItem="8B9-CI-msg" secondAttribute="top" id="cmB-80-qXF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SAh-bO-wGr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oda-dV-eET" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1927.5700934579438" y="93.952483801295898"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0L2-KY-cli">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dyl-0f-9pf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0CM-fo-0qj">
+                        <rect key="frame" x="0.0" y="47" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NaE-jF-wZ5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nue-nb-ZqT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113.04347826086958" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
