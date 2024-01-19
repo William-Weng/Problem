@@ -41,7 +41,7 @@ final class TableViewDemoController: UIViewController {
     
     struct Movie: Hashable {
         
-        var uuid = UUID()   // 以UUID為hash值 (防止一樣的資料不能新增)
+        let uuid = UUID()   // 以UUID為hash值 (防止一樣的資料不能新增)
         
         var name: String
         var actor: String
@@ -57,7 +57,8 @@ final class TableViewDemoController: UIViewController {
     }
     
     @IBOutlet weak var myTableView: UITableView!
-        
+    
+    private var moviesInfo: [MovieInfo] = []
     private lazy var dataSource: UITableViewDiffableDataSource<Section, Movie> = dataSourceMaker()
     
     override func viewDidLoad() {
@@ -118,7 +119,8 @@ private extension TableViewDemoController {
     /// 初始化
     func initSetting() {
         
-        let snapshot = sourceSnapshotMaker()
+        let moviesInfo = movieInfoMaker()
+        let snapshot = sourceSnapshotMaker(moviesInfo: moviesInfo)
         
         myTableView.delegate = self
         myTableView.dataSource = dataSource                                 // 取代 myTableView.dataSource = self
@@ -146,9 +148,8 @@ private extension TableViewDemoController {
     
     /// 產生比對用的DataSource
     /// - Returns: NSDiffableDataSourceSnapshot<Section, Movie>
-    func sourceSnapshotMaker() -> NSDiffableDataSourceSnapshot<Section, Movie> {
+    func sourceSnapshotMaker(moviesInfo: [TableViewDemoController.MovieInfo]) -> NSDiffableDataSourceSnapshot<Section, Movie> {
         
-        let moviesInfo = movieInfoMaker()
         let sections = moviesInfo.map { $0.section }                                    // [.adventure, .romance]
         
         var snapshot = NSDiffableDataSourceSnapshot<Section, Movie>()                   // 取代 Model
@@ -178,7 +179,7 @@ private extension TableViewDemoController {
             Movie(name: "手札情緣", actor: "雷恩", year: 2004)
         ]
         
-        let moviesInfo: [MovieInfo] = [
+        moviesInfo = [
             (section: .adventure, items: adventureMovies),
             (section: .romance, items: romanceMovies),
         ]
@@ -230,9 +231,9 @@ private extension TableViewDemoController {
         
         let updateAction = UIContextualAction._build(with: "更新", color: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)) {
             
-            guard var movie = self.dataSource.itemIdentifier(for: indexPath) else { return }
+            guard let oldMovie = self.dataSource.itemIdentifier(for: indexPath) else { return }
             
-            movie.name = "\(Date())"
+            let movie = Movie(name: "\(Date())", actor: oldMovie.actor, year: oldMovie.year)
             self.updateMovie(movie: movie, with: indexPath)
         }
         
@@ -244,8 +245,10 @@ private extension TableViewDemoController {
 private extension TableViewDemoController {
     
     /// [刪除資料](https://medium.com/@le821227/diffable-datasource-for-uitableview-uicollectionview-6c4436362ae6)
-    /// - Parameter indexPath: IndexPath
-    func deleteMovie(with indexPath: IndexPath) {
+    /// - Parameters:
+    ///   - indexPath: IndexPath
+    ///   - animatingDifferences: Bool
+    func deleteMovie(with indexPath: IndexPath, animatingDifferences: Bool = true) {
         
         guard var snapshot = Optional.some(dataSource.snapshot()),
               let deleteItem = dataSource.itemIdentifier(for: indexPath)
@@ -254,16 +257,16 @@ private extension TableViewDemoController {
         }
         
         snapshot.deleteItems([deleteItem])
-        dataSource.apply(snapshot, animatingDifferences: true)
+        dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
     }
-            
+    
     /// 新增資料
-    /// - Parameters:
     /// - Parameters:
     ///   - movie: Movie
     ///   - indexPath: IndexPath
-    func appendMovie(_ movie: Movie, with indexPath: IndexPath) {
-                
+    ///   - animatingDifferences: Bool
+    func appendMovie(_ movie: Movie, with indexPath: IndexPath, animatingDifferences: Bool = true) {
+        
         guard var snapshot = Optional.some(dataSource.snapshot()),
               let section = Section(rawValue: indexPath.section)
         else {
@@ -271,14 +274,15 @@ private extension TableViewDemoController {
         }
         
         snapshot.appendItems([movie], toSection: section)
-        dataSource.apply(snapshot, animatingDifferences: true)
+        dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
     }
     
     /// 插入資料 (之前)
     /// - Parameters:
-    ///   - indexPath: IndexPath
     ///   - movie: Movie
-    func insertMovie(_ movie: Movie, before indexPath: IndexPath) {
+    ///   - indexPath: IndexPath
+    ///   - animatingDifferences: Bool
+    func insertMovie(_ movie: Movie, before indexPath: IndexPath, animatingDifferences: Bool = true) {
         
         guard var snapshot = Optional.some(dataSource.snapshot()),
               let beforeItem = dataSource.itemIdentifier(for: indexPath)
@@ -287,14 +291,15 @@ private extension TableViewDemoController {
         }
 
         snapshot.insertItems([movie], beforeItem: beforeItem)
-        dataSource.apply(snapshot, animatingDifferences: true)
+        dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
     }
     
     /// 插入資料 (之後)
     /// - Parameters:
     ///   - indexPath: IndexPath
     ///   - movie: Movie
-    func insertMovie(_ movie: Movie, after indexPath: IndexPath) {
+    ///   - animatingDifferences: Bool
+    func insertMovie(_ movie: Movie, after indexPath: IndexPath, animatingDifferences: Bool = true) {
                 
         guard var snapshot = Optional.some(dataSource.snapshot()),
               let afterItem = dataSource.itemIdentifier(for: indexPath)
@@ -303,7 +308,7 @@ private extension TableViewDemoController {
         }
 
         snapshot.insertItems([movie], afterItem: afterItem)
-        dataSource.apply(snapshot, animatingDifferences: true)
+        dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
     }
     
     /// 搜尋資料
@@ -314,15 +319,12 @@ private extension TableViewDemoController {
         return item
     }
     
-    /// 更新資料 (有問題 T.T)
+    /// 更新資料
     /// - Parameters:
     ///   - movie: Movie
     ///   - indexPath: IndexPath
     func updateMovie(movie: Movie, with indexPath: IndexPath) {
-        
-        var snapshot = dataSource.snapshot()
-        snapshot.reloadItems([movie])
-                
-        dataSource.apply(snapshot, animatingDifferences: true)
+        insertMovie(movie, after: indexPath)
+        deleteMovie(with: indexPath)
     }
 }
