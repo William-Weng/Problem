@@ -54,3 +54,5 @@
 ## DynamicCellHeight - TableView折疊問題 (要如何讓Cell上有字的View不見呢？)
 ![DynamicCellHeight](./_GIF_/DynamicCellHeight.gif)
 
+## DiffableDataSourceDemo - UITableViewDiffableDataSource (應該如何更新Cell的內容嗎？)
+![DiffableDataSourceDemo](./_GIF_/UITableViewDiffableDataSource.gif)
