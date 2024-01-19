@@ -55,4 +55,4 @@
 ![DynamicCellHeight](./_GIF_/DynamicCellHeight.gif)
 
 ## DiffableDataSourceDemo - UITableViewDiffableDataSource (應該如何更新Cell的內容嗎？)
-![DiffableDataSourceDemo](./_GIF_/UITableViewDiffableDataSource.gif)
+![DiffableDataSourceDemo](./_GIF_/DiffableDataSourceDemo.gif)
