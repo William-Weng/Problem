@@ -4,4 +4,5 @@
 ## Swift-Combine - Swift-Combine上的問題
 ## SwiftUI - SwiftUI上的問題
 ## VUE - 網頁上的問題
+## Android - Andoird上的問題
 
