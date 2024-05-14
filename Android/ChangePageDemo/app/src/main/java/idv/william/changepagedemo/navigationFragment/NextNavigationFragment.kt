@@ -27,13 +27,19 @@ class NextNavigationFragment : Fragment() {
         Utility._Instance.wwLog(`class` = javaClass, message = "onViewCreated")
     }
 
+    /**
+     * 初始化
+     */
     private fun initSetting() {
         navigationButton = requireActivity().findViewById(R.id.next_navigation_button)
-        listener.buttonOnClickListener(button = navigationButton, action = ::nextPage)
+        listener.buttonOnClickListener(button = navigationButton, action = ::previousPage)
     }
 
-    private fun nextPage() {
-        navigationController.navigate(R.id.action_nextNavigationFragment_to_rootNavigationFragment)
+    /**
+     * 回上一頁
+     */
+    private fun previousPage() {
+        navigationController.navigateUp()
     }
 
     /**

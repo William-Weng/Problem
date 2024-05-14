@@ -27,11 +27,17 @@ class RootNavigationFragment : Fragment() {
         Utility._Instance.wwLog(`class` = javaClass, message = "onViewCreated")
     }
 
+    /**
+     * 初始化
+     */
     private fun initSetting() {
         navigationButton = requireActivity().findViewById(R.id.navigation_button)
         listener.buttonOnClickListener(button = navigationButton, action = ::nextPage)
     }
 
+    /**
+     * 到下一頁
+     */
     private fun nextPage() {
         navigationController.navigate(R.id.action_rootNavigationFragment_to_nextNavigationFragment)
     }

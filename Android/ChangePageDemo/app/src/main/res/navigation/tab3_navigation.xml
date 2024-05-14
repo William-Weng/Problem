@@ -12,23 +12,15 @@
         <action
             android:id="@+id/action_rootNavigationFragment_to_nextNavigationFragment"
             app:destination="@id/nextNavigationFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
         android:id="@+id/nextNavigationFragment"
         android:name="idv.william.changepagedemo.navigationFragment.NextNavigationFragment"
         android:label="fragment_next_navigation"
-        tools:layout="@layout/fragment_next_navigation" >
-        <action
-            android:id="@+id/action_nextNavigationFragment_to_rootNavigationFragment"
-            app:destination="@id/rootNavigationFragment"
-            app:enterAnim="@anim/nav_default_pop_enter_anim"
-            app:exitAnim="@anim/nav_default_pop_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-    </fragment>
+        tools:layout="@layout/fragment_next_navigation" />
 </navigation>
