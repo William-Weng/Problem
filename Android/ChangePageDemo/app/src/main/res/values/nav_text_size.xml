@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--點擊後的字體大小-->
+    <style name="bottom_tab_title_active">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <!--點擊前的字體大小-->
+    <style name="bottom_tab_title_inactive">
+        <item name="android:textSize">14sp</item>
+    </style>
+</resources>

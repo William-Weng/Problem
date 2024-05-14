@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">換頁功能</string>
+    <string name="intentButtonText">Intent</string>
+    <string name="fragmentButtonText">Fragment</string>
+    <string name="subButtonText">取得上一頁傳來的值</string>
+    <string name="bundleTextView1Text">數值1</string>
+    <string name="bundleTextView2Text">數值2</string>
+    <string name="tabBarSearch">Intent</string>
+    <string name="tabBarSettings">ViewPager</string>
+    <string name="tabBarNavigation">Navigation</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

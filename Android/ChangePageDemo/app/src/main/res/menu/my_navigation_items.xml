@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_search"
+        android:title="@string/tabBarSearch"
+        android:icon="@mipmap/search" />
+    <item android:id="@+id/action_settings"
+        android:title="@string/tabBarSettings"
+        android:icon="@mipmap/settings" />
+    <item android:id="@+id/action_navigation"
+        android:title="@string/tabBarNavigation"
+        android:icon="@mipmap/navigation" />
+</menu>
