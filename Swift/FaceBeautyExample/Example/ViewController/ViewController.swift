@@ -21,20 +21,20 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initSetting()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.initSliderSetting()
-        }
     }
     
     @IBAction func changeBeautyValue(_ sender: UISlider) {
         license.sdk.changeBeautifyFilter(intensity: sender.value)
     }
+    
+    @IBAction func displayFaceDetectPoint(_ sender: UISwitch) {
+        license.sdk.displayFaceDetectPoint(sender.isOn)
+    }
 }
 
 // MARK: - 小工具
 private extension ViewController {
-        
+    
     /// 初始化設定
     func initSetting() {
         

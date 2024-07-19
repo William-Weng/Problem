@@ -46,7 +46,17 @@
                             <constraint firstItem="CnH-fC-d8Z" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oyN-8K-reT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="nvs-zi-2RQ"/>
+                    <navigationItem key="navigationItem" id="nvs-zi-2RQ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="fr2-9m-jEj">
+                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="IXN-dq-I3b">
+                                <rect key="frame" x="343" y="6.5" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="displayFaceDetectPoint:" destination="BYZ-38-t0r" eventType="valueChanged" id="N36-bP-Eb1"/>
+                                </connections>
+                            </switch>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="previewView" destination="CnH-fC-d8Z" id="vIP-ul-emU"/>
                         <outletCollection property="sliders" destination="OYv-xn-6nq" collectionClass="NSMutableArray" id="575-vV-7sE"/>
