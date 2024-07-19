@@ -62,3 +62,6 @@
 
 ## UIKit+SwiftUI - 測試讓SwiftUI在UIKit中連動
 ![UIKit+SwiftUI](./_GIF_/UIKit+SwiftUI.gif)
+
+## [FaceBeautyExample - Meihu-Beautyface-SDK轉成Swift測試使用](https://github.com/zhanghao5683934/Meihu-Beautyface-sdk) 
+![FaceBeautyExample](./_GIF_/FaceBeautyExample.gif)
