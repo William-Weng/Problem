@@ -12,6 +12,7 @@ import WWPrint
 import AVFoundation
 import GPURenderKit
 
+// MARK: - BeautyfaceSwiftSDK
 open class BeautyfaceSwiftSDK: NSObject {
     
     public class Filter {}

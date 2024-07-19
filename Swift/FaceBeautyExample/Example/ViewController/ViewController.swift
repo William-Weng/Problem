@@ -47,16 +47,16 @@ private extension ViewController {
             
             switch license.type {
             case .fail, .error:
-                
-                let filter = license.sdk.baseFilterSetting(preview: preview)
-                self.videoCamera.addTarget(filter)
-
+                wwPrint(license.type.message())
             case .success:
                 
                 let result = license.sdk.markManagerSetting()
                 
                 switch result {
-                case .failure(let error): wwPrint(error)
+                case .failure(let error): 
+                    let filter = license.sdk.baseFilterSetting(preview: preview)
+                    self.videoCamera.addTarget(filter)
+                    wwPrint(error)
                 case .success(let isSuccess): wwPrint(isSuccess)
                                         
                     let filter = license.sdk.filterGroupSetting(preview: preview, position: position)
