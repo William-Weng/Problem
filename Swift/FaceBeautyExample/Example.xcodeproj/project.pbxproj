@@ -22,6 +22,9 @@
 		816C52812C490FF5005AADD4 /* libMGFacepp-0.5.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 816C527A2C490FF5005AADD4 /* libMGFacepp-0.5.2.a */; };
 		816C52822C490FF5005AADD4 /* megviifacepp_0_5_2_model in Resources */ = {isa = PBXBuildFile; fileRef = 816C527D2C490FF5005AADD4 /* megviifacepp_0_5_2_model */; };
 		816C52842C491644005AADD4 /* BeautyfaceSwiftSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C52832C491644005AADD4 /* BeautyfaceSwiftSDK.swift */; };
+		81ACDCD52C4DFD9A005DA2C7 /* BeautyfaceSwiftSDKDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ACDCD42C4DFD9A005DA2C7 /* BeautyfaceSwiftSDKDelegate.swift */; };
+		81ACDCD92C4DFE52005DA2C7 /* WWHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 81ACDCD82C4DFE52005DA2C7 /* WWHUD */; };
+		81ACDCDB2C4DFEE4005DA2C7 /* Error.gif in Resources */ = {isa = PBXBuildFile; fileRef = 81ACDCDA2C4DFEE4005DA2C7 /* Error.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,8 @@
 		816C527F2C490FF5005AADD4 /* MGFaceppCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFaceppCommon.h; sourceTree = "<group>"; };
 		816C52802C490FF5005AADD4 /* MGFaceppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFaceppConfig.h; sourceTree = "<group>"; };
 		816C52832C491644005AADD4 /* BeautyfaceSwiftSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautyfaceSwiftSDK.swift; sourceTree = "<group>"; };
+		81ACDCD42C4DFD9A005DA2C7 /* BeautyfaceSwiftSDKDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautyfaceSwiftSDKDelegate.swift; sourceTree = "<group>"; };
+		81ACDCDA2C4DFEE4005DA2C7 /* Error.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Error.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +68,7 @@
 			files = (
 				816C52812C490FF5005AADD4 /* libMGFacepp-0.5.2.a in Frameworks */,
 				816C526A2C490B5B005AADD4 /* GPURenderKit.framework in Frameworks */,
+				81ACDCD92C4DFE52005DA2C7 /* WWHUD in Frameworks */,
 				3DAC9C1927016E78006663C2 /* WWPrint in Frameworks */,
 				816C52762C490FCD005AADD4 /* libMGLicMgrSDK-0.3.1.a in Frameworks */,
 			);
@@ -104,7 +110,7 @@
 		3DBCD88726F1992200522E3B /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				816C52832C491644005AADD4 /* BeautyfaceSwiftSDK.swift */,
+				81ACDCD62C4DFDB7005DA2C7 /* BeautyfaceSwiftSDK */,
 				3DBCD87726F198EF00522E3B /* ViewController.swift */,
 			);
 			path = ViewController;
@@ -122,6 +128,7 @@
 		3DBCD88926F1994500522E3B /* Material */ = {
 			isa = PBXGroup;
 			children = (
+				81ACDCDA2C4DFEE4005DA2C7 /* Error.gif */,
 				3DBCD87C26F198F300522E3B /* Assets.xcassets */,
 			);
 			path = Material;
@@ -210,6 +217,15 @@
 			path = iOS_SDK;
 			sourceTree = "<group>";
 		};
+		81ACDCD62C4DFDB7005DA2C7 /* BeautyfaceSwiftSDK */ = {
+			isa = PBXGroup;
+			children = (
+				816C52832C491644005AADD4 /* BeautyfaceSwiftSDK.swift */,
+				81ACDCD42C4DFD9A005DA2C7 /* BeautyfaceSwiftSDKDelegate.swift */,
+			);
+			path = BeautyfaceSwiftSDK;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -228,6 +244,7 @@
 			name = Example;
 			packageProductDependencies = (
 				3DAC9C1827016E78006663C2 /* WWPrint */,
+				81ACDCD82C4DFE52005DA2C7 /* WWHUD */,
 			);
 			productName = Example;
 			productReference = 3DBCD87026F198EF00522E3B /* Example.app */;
@@ -260,6 +277,7 @@
 			mainGroup = 3DBCD86726F198EF00522E3B;
 			packageReferences = (
 				3DAC9C1727016E78006663C2 /* XCRemoteSwiftPackageReference "WWPrint" */,
+				81ACDCD72C4DFE52005DA2C7 /* XCRemoteSwiftPackageReference "WWHUD" */,
 			);
 			productRefGroup = 3DBCD87126F198EF00522E3B /* Products */;
 			projectDirPath = "";
@@ -277,6 +295,7 @@
 			files = (
 				816C52822C490FF5005AADD4 /* megviifacepp_0_5_2_model in Resources */,
 				3DBCD88026F198F300522E3B /* LaunchScreen.storyboard in Resources */,
+				81ACDCDB2C4DFEE4005DA2C7 /* Error.gif in Resources */,
 				3DBCD87D26F198F300522E3B /* Assets.xcassets in Resources */,
 				3DBCD87B26F198EF00522E3B /* Main.storyboard in Resources */,
 			);
@@ -293,6 +312,7 @@
 				8130039227D5D19000436128 /* Extension.swift in Sources */,
 				816C52712C490ED1005AADD4 /* MGFaceLicenseHandle.m in Sources */,
 				3DBCD87826F198EF00522E3B /* ViewController.swift in Sources */,
+				81ACDCD52C4DFD9A005DA2C7 /* BeautyfaceSwiftSDKDelegate.swift in Sources */,
 				3DBCD87426F198EF00522E3B /* AppDelegate.swift in Sources */,
 				8130039027D5D18100436128 /* Constant.swift in Sources */,
 				816C52842C491644005AADD4 /* BeautyfaceSwiftSDK.swift in Sources */,
@@ -537,7 +557,15 @@
 			repositoryURL = "https://github.com/William-Weng/WWPrint";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 1.3.1;
+			};
+		};
+		81ACDCD72C4DFE52005DA2C7 /* XCRemoteSwiftPackageReference "WWHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/William-Weng/WWHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -547,6 +575,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3DAC9C1727016E78006663C2 /* XCRemoteSwiftPackageReference "WWPrint" */;
 			productName = WWPrint;
+		};
+		81ACDCD82C4DFE52005DA2C7 /* WWHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 81ACDCD72C4DFE52005DA2C7 /* XCRemoteSwiftPackageReference "WWHUD" */;
+			productName = WWHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

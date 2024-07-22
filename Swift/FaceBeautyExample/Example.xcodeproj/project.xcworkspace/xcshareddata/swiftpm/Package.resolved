@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "wwhud",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWHUD",
+      "state" : {
+        "revision" : "eb99ab96183c0aba10be35bf747f388ef8c4b50e",
+        "version" : "1.3.1"
+      }
+    },
+    {
       "identity" : "wwprint",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/William-Weng/WWPrint",

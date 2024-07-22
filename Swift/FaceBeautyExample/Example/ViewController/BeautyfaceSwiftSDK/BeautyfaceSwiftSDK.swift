@@ -6,13 +6,13 @@
 //
 /// [Meihu-Beautyface-SDK](https://github.com/zhanghao5683934/Meihu-Beautyface-sdk)
 /// [GPURenderKitDemo](https://github.com/Dongdong1991/GPURenderKitDemo)
-/// [測試圖片來源](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSna7ATlHsHsAyrXI1ViNJrjpRApZCqrHW2-g&s)
+/// [測試圖片來源](https://www.linkouhoskin.com.tw/Files/202004230534042.jpg)
 
 import WWPrint
 import AVFoundation
 import GPURenderKit
 
-// MARK: - BeautyfaceSwiftSDK
+// MARK: - BeautyfaceSwiftSDK (試著整合Meihu-Beautyface-SDK)
 open class BeautyfaceSwiftSDK: NSObject {
     
     public class Filter {}
@@ -41,6 +41,8 @@ open class BeautyfaceSwiftSDK: NSObject {
         case unknown
     }
         
+    public weak var delegate: BeautyfaceSwiftSDKDelegate?
+    
     private var authorizationType: AuthorizationType = .fail
     private var markManager: MGFacepp?
     private var previewImageView: GPUImageView?
@@ -51,7 +53,9 @@ open class BeautyfaceSwiftSDK: NSObject {
     private var vignetteFilter: GPUImageVignetteFilter?
     private var sketchFilter: GPUImageSketchFilter?
     
-    private override init() {}
+    private override init() {
+        delegate = nil
+    }
 }
 
 // MARK: - 公開函式 (static function)
@@ -80,6 +84,10 @@ public extension BeautyfaceSwiftSDK {
 
 // MARK: - 公開函式 (function)
 public extension BeautyfaceSwiftSDK {
+    
+    func filiterGroupPosition(_ position: AVCaptureDevice.Position) {
+        filterGroup?.setCaptureDevicePosition(position)
+    }
     
     /// 管理器設定
     /// - Parameters:
@@ -206,8 +214,57 @@ public extension BeautyfaceSwiftSDK {
 // MARK: - GPUImageVideoCameraDelegate
 extension BeautyfaceSwiftSDK: GPUImageVideoCameraDelegate {}
 public extension BeautyfaceSwiftSDK {
-    
+        
     func willOutputSampleBuffer(_ sampleBuffer: CMSampleBuffer!) {
+        willOutputSampleBufferAction(sampleBuffer)
+    }
+}
+
+// MARK: - 產生濾鏡
+private extension BeautyfaceSwiftSDK.Filter {
+    
+    /// 磨皮 (去斑點)
+    /// - Parameter intensity: 強度 (0% ~ 100%)
+    /// - Returns: BBGPUImageBeautifyFilter
+    static func beautify(intensity: CGFloat) -> BBGPUImageBeautifyFilter {
+        
+        let filiter = BBGPUImageBeautifyFilter()
+        filiter.intensity = intensity
+        
+        return filiter
+    }
+    
+    /// sketch
+    /// - Returns: GPUImageSketchFilter
+    static func sketch(edgeStrength: CGFloat) -> GPUImageSketchFilter {
+        
+        let filter = GPUImageSketchFilter()
+        filter.edgeStrength = edgeStrength
+        
+        return filter
+    }
+    
+    /// vignette
+    /// - Parameters:
+    ///   - start: CGFloat
+    ///   - end: CGFloat
+    /// - Returns: GPUImageVignetteFilter
+    static func vignette(start: CGFloat, end: CGFloat) -> GPUImageVignetteFilter {
+        
+        let filiter = GPUImageVignetteFilter()
+        filiter.vignetteStart = start
+        filiter.vignetteEnd = end
+        
+        return filiter
+    }
+}
+
+// MARK: - 小工具 (function)
+private extension BeautyfaceSwiftSDK {
+    
+    /// 處理將要輸出的Buffer資訊
+    /// - Parameter sampleBuffer: CMSampleBuffer
+    func willOutputSampleBufferAction(_ sampleBuffer: CMSampleBuffer) {
         
         guard let markManager = markManager else { return }
         
@@ -218,16 +275,12 @@ public extension BeautyfaceSwiftSDK {
             switch markManager.status {
             case .markPrepareWork, .markStopped, .markWaiting:
                 let faceCount = detectSampleBuffer(sampleBuffer, markManager: markManager)
-                wwPrint("faceCount = \(faceCount)")
+                delegate?.faceCount(sdk: self, count: faceCount)
             case .markWorking: break
             @unknown default: break
             }
         }
     }
-}
-
-// MARK: - 小工具
-private extension BeautyfaceSwiftSDK {
     
     /// 取得Model資料
     /// - Returns: Result<Data?, Error>
@@ -287,44 +340,5 @@ private extension BeautyfaceSwiftSDK {
         imageView.setBackgroundColorRed(0.2, green: 0.2, blue: 0.2, alpha: 1.0)
         
         return imageView
-    }
-}
-
-// MARK: - 濾鏡
-private extension BeautyfaceSwiftSDK.Filter {
-    
-    /// 磨皮 (去斑點)
-    /// - Parameter intensity: 強度 (0% ~ 100%)
-    /// - Returns: BBGPUImageBeautifyFilter
-    static func beautify(intensity: CGFloat) -> BBGPUImageBeautifyFilter {
-        
-        let filiter = BBGPUImageBeautifyFilter()
-        filiter.intensity = intensity
-        
-        return filiter
-    }
-    
-    /// sketch
-    /// - Returns: GPUImageSketchFilter
-    static func sketch(edgeStrength: CGFloat) -> GPUImageSketchFilter {
-        
-        let filter = GPUImageSketchFilter()
-        filter.edgeStrength = edgeStrength
-        
-        return filter
-    }
-    
-    /// vignette
-    /// - Parameters:
-    ///   - start: CGFloat
-    ///   - end: CGFloat
-    /// - Returns: GPUImageVignetteFilter
-    static func vignette(start: CGFloat, end: CGFloat) -> GPUImageVignetteFilter {
-        
-        let filiter = GPUImageVignetteFilter()
-        filiter.vignetteStart = start
-        filiter.vignetteEnd = end
-        
-        return filiter
     }
 }
