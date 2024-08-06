@@ -65,3 +65,6 @@
 
 ## [FaceBeautyExample - Meihu-Beautyface-SDK轉成Swift測試使用](https://github.com/zhanghao5683934/Meihu-Beautyface-sdk) 
 ![FaceBeautyExample](./_GIF_/FaceBeautyExample.gif)
+
+## [MallMenuDemo - 測試時下商城常用的選單設計](https://www.hangge.com/blog/cache/detail_2259.html)
+![MallMenuDemo](./_GIF_/MallMenuDemo.gif)
